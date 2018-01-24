@@ -1,0 +1,421 @@
+// font-face
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('webfont.eot'); /* IE9 Compat Modes */
+    src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
+         url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
+         url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+$font-bold: 700;
+
+body {
+//   line-height: 1.45;
+  display: flex;
+  flex-wrap: wrap;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+}
+
+ul {
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+// hamburger menu
+nav select {
+    display: none;
+}
+
+// colors
+$black: #1D1E2C;
+$red: #DB1111;
+$grey: #7C7C7C;
+$light-grey: #AFAFAF;
+
+$main-font-color: $light-grey;
+$active-color: $light-grey;
+
+// styling
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+// content
+.content {
+    flex: 1 1 100%;
+    min-height: 100vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: black;
+    z-index: 2;
+}
+
+// image sizing
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+// Helvetica font
+.helv-h1 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+
+.helv-h3 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 15.4px;
+}
+
+.helv-p {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}
+
+.helv-blockquote {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 21px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 30px;
+}
+.helv-pre {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 18.5714px;
+}
+
+// navigation bar
+
+#navbar {
+    width: 100%;
+    overflow: hidden;
+    background-color: transparent;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    color: white;
+    transition: color 200ms linear;
+}
+
+#navbar:after {
+    background-color: $black;
+    content: '';
+    display: block;
+    position: absolute;
+    padding-left: 5%;
+    padding-right: 5%;
+    z-index: 2;
+}
+
+#navbar a {
+    display: block;
+    text-align: left;
+    padding-top: 14px;
+    padding-bottom: 14px;      
+    margin-left: 16px;
+    padding-right: 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+    &.navbar-home {
+        float: left;
+        margin-left: 7rem;
+    }
+
+    &.navbar-about {
+        float: left;
+    }
+
+    &.navbar-projects {
+        float: left;
+    }
+
+    &.navbar-logo {
+        float: right;
+        margin-right: 7rem;
+    }
+}
+
+// convert to hamburger menu for smaller screens
+@media (max-width: 540px) {
+    nav ul     { display: none; }
+    nav select { display: inline-block; }
+    p {font-size: 40%;}
+}
+
+// image covering
+.container-image {
+    height: 100vh;
+    width: 100%;
+}
+
+// tagline and logo
+#container-tagline {
+    display: grid;
+    height: 100%;
+    grid-template-columns: [first-tag] 15% [line2-tag] 70% [line3-endtag] 7.5% [line4-logo] 7.5% [end];
+    grid-template-rows: [row1-start] 15% [row2-logo] 30% [row3-name] 30% [row4-text] 25% [row4-end];
+    background-image: url("https://images.unsplash.com/photo-1492086517200-9393d4eb53bf?auto=format&fit=crop&w=1502&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    // opacity: 0.8;
+}
+
+.tagline-item {
+    color: $light-grey;
+    font-weight: $font-bold;
+    display: flex;
+    font-size: 1.5em;
+    background-size: cover;
+    background-position: top left;
+    transition: all ease-in-out 300ms;
+    position: relative;
+    z-index: 2;
+
+    &.tagline-logo {
+        grid-area: 1 / 4 / 2 / 5;
+    }
+
+    &.tagline-name {
+        grid-area: 2 / 2 / 3 / 3;
+        font-size: 400%;
+        z-index: 3;
+        align-self: end;
+    }
+
+    &.tagline-text {
+        grid-area: 3 / 2 / 4 / 3;
+        font-size: 200%;
+        align-self: start;
+    }
+}
+
+.tagline-text {
+    font-size: 300%;
+}
+
+// about
+#container-about {
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    grid-template-columns: [first] 20% [line2-about] 60% [line3-resume] 20% [end];
+    grid-template-rows: [row1-start] 25% [row2-about] 10% [row3-about] 65% [row4-end];
+    justify-items: start;
+    align-items: start;
+    background-color: paleturquoise;   
+}
+
+.about-item {
+    color: $black;
+    display: flex;
+    background-size: cover;
+    background-position: top left;
+    transition: all ease-in-out 300ms;
+    position: relative;
+    z-index: 2;
+
+    &.about-title {
+        grid-area: 2 / 1 / 3 / 2;
+        font-size: 200%;
+    }
+
+    &.about-text {
+        grid-area: 3 / 1 / 4 / 3;
+        font-size: 125%;
+    }
+
+    &.about-resume {
+        grid-area: 2 / 3 / 3 / 4;
+        font-size: 1.75rem;
+    }
+}
+
+
+// Zelda Tips CSS
+html, body {
+    height: 100%;
+    background: #000;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+}
+
+// projects
+#container-projects-top {
+    display: grid;
+    height: 50vh;
+    width: 100%;
+    grid-template-columns: [first] 5% [line2-space] 35% [line3-title] 30% [line4-project] 30% [end];
+    grid-template-rows: [row1-white] 100% [row2-end];
+    font-family: 'Source Sans Pro', sans-serif;
+    justify-items: start;
+    align-items: end;
+    background-color: white;
+    color: black;
+}
+
+#container-projects-bottom {
+    display: grid;
+    height: 50vh;
+    width: 100%;
+    grid-template-columns: [first] 5% [line2-space] 65% [line3-description] 20% [line4-description] 10% [end];
+    grid-template-rows: [row1-black] 100% [row2-end];
+    font-family: 'Source Sans Pro', sans-serif;
+    justify-items: start;
+    align-items: start;
+    background-color: black;
+    color: white;
+}
+
+.project-item {
+    display: flex;
+    background-size: cover;
+    background-position: top left;
+    transition: all ease-in-out 300ms;
+    position: relative;
+    z-index: 2;
+
+    &.project-title {
+        grid-area: 1 / 2 / 2 / 3;
+        font-style: italic;
+        letter-spacing: 1px;
+        font-size: 200%;
+        z-index: 4;
+    }
+
+    &.project-content {
+        grid-area: 1 / 2 / 2 / 3;
+        font-style: italic;
+        letter-spacing: 1px;
+        font-size: 200%;
+        z-index: 4;
+    }
+
+    &.project-content p {
+        
+    }
+
+    &.project-next {
+        grid-area: 1 / 4 / 2 / 5; 
+        font-style: italic;
+        font-weight: 400;
+        letter-spacing: 1px;
+        text-align: right;
+        // font-size: 20px;
+        line-height: 28px;
+        transition: all 0.2s ease;
+        cursor: pointer;
+    }
+
+}
+    
+// next-project
+.next-project {
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-align: right;
+    font-size: 20px;
+    line-height: 28px;
+    transition: all 0.2s ease;
+    z-index: 1000;
+}
+
+.next-project:hover {
+    cursor: pointer;
+}
+
+.next-project:active {
+    color: #555;
+}
+
+// footer
+.footer {
+    display: grid;
+    height: 25vh;
+    width: 100%;
+    grid-template-columns: [first-space] 12% [line2-fiddle] 18% [line3-github] 18% [line4-fb] 18% [line5-linkedin] 18% [end];
+    grid-template-rows: [row1-start] 100% [row2-end];
+    padding-top: 8vh;
+    background-color: $light-grey;
+}
+
+.footer-jsfiddle {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+}
+
+.footer-github {
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 1;
+}
+
+.footer-facebook {
+    grid-column: 4 / span 1;
+    grid-row: 1 / span 1;
+}
+
+.footer-linkedin {
+    grid-column: 5 / span 1;
+    grid-row: 1 / span 1;
+}
+
+// icons
+.icon {
+    float: left;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-top: -1rem;
+}
+
+// fonts
+.oxygen {
+    font-family: 'Oxygen', sans-serif;
+}
+
+.raleway {
+    font-family: 'Raleway', sans-serif;
+}
+
+.ptsans {
+    font-family: 'PT Sans', sans-serif;
+}
+
+// font modifiers 
+.xl {
+    font-size: 300%;
+}
