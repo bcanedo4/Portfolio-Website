@@ -1,9 +1,3 @@
-@font-face {
-  font-family: 'Helvetica Neue';
-  src: url("webfont.eot");
-  /* IE9 Compat Modes */
-  src: url("webfont.eot?#iefix") format("embedded-opentype"), url("webfont.woff2") format("woff2"), url("webfont.woff") format("woff"), url("webfont.ttf") format("truetype"), url("webfont.svg#svgFontName") format("svg");
-  /* Legacy iOS */ }
 body {
   display: flex;
   flex-wrap: wrap;
@@ -12,14 +6,14 @@ body {
 a {
   color: inherit; }
 
+p {
+  margin: 0; }
+
 ul {
   text-decoration: none;
   list-style: none;
   margin: 0;
   padding: 0; }
-
-nav select {
-  display: none; }
 
 .pull-left {
   float: left; }
@@ -33,54 +27,12 @@ nav select {
 .content {
   flex: 1 1 100%;
   min-height: 100vh;
-  padding-left: 5%;
-  padding-right: 5%;
   background-color: black;
   z-index: 2; }
 
 img {
   max-width: 100%;
   height: auto; }
-
-.helv-h1 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 24px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 500;
-  line-height: 26.4px; }
-
-.helv-h3 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 500;
-  line-height: 15.4px; }
-
-.helv-p {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 400;
-  line-height: 20px; }
-
-.helv-blockquote {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 21px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 400;
-  line-height: 30px; }
-
-.helv-pre {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 400;
-  line-height: 18.5714px; }
 
 #navbar {
   width: 100%;
@@ -121,15 +73,51 @@ img {
     float: right;
     margin-right: 7rem; }
 
-@media (max-width: 540px) {
+nav div {
+  display: none; }
+
+@media (max-width: 1100px) {
   nav ul {
     display: none; }
 
-  nav select {
+  nav div {
     display: inline-block; }
 
   p {
-    font-size: 40%; } }
+    font-size: 80%; }
+
+  .fa-3x {
+    font-size: 2.5em; } }
+@media (max-width: 920px) {
+  nav ul {
+    display: none; }
+
+  nav div {
+    display: inline-block; }
+
+  p {
+    font-size: 60%; }
+
+  .fa-3x {
+    font-size: 2em; } }
+@media (max-width: 710px) {
+  nav ul {
+    display: none; }
+
+  nav div {
+    display: inline-block; }
+
+  p {
+    font-size: 40%; }
+
+  .fa-3x {
+    font-size: 1.5em; } }
+@media (max-width: 520px) {
+  .fa-3x {
+    font-size: 1.25em; } }
+.fa-bars {
+  margin: 25px; }
+
 .container-image {
   height: 100vh;
   width: 100%; }
@@ -160,11 +148,15 @@ img {
     grid-area: 2 / 2 / 3 / 3;
     font-size: 400%;
     z-index: 3;
-    align-self: end; }
+    margin: 0;
+    align-self: end;
+    justify-self: center; }
   .tagline-item.tagline-text {
     grid-area: 3 / 2 / 4 / 3;
     font-size: 200%;
-    align-self: start; }
+    margin: 0;
+    align-self: start;
+    justify-self: center; }
 
 .tagline-text {
   font-size: 300%; }
@@ -189,10 +181,12 @@ img {
   z-index: 2; }
   .about-item.about-title {
     grid-area: 2 / 1 / 3 / 2;
-    font-size: 200%; }
+    font-size: 200%;
+    margin-left: 5%; }
   .about-item.about-text {
     grid-area: 3 / 1 / 4 / 3;
-    font-size: 125%; }
+    font-size: 125%;
+    margin-left: 7.5%; }
   .about-item.about-resume {
     grid-area: 2 / 3 / 3 / 4;
     font-size: 1.75rem; }
@@ -207,7 +201,7 @@ html, body {
   display: grid;
   height: 50vh;
   width: 100%;
-  grid-template-columns: [first] 5% [line2-space] 35% [line3-title] 30% [line4-project] 30% [end];
+  grid-template-columns: [first] 5% [line2-space] 55% [line3-title] 10% [line4-project] 30% [end];
   grid-template-rows: [row1-white] 100% [row2-end];
   font-family: 'Source Sans Pro', sans-serif;
   justify-items: start;
@@ -219,7 +213,7 @@ html, body {
   display: grid;
   height: 50vh;
   width: 100%;
-  grid-template-columns: [first] 5% [line2-space] 65% [line3-description] 20% [line4-description] 10% [end];
+  grid-template-columns: [first] 5% [line2-space] 65% [line3-description] 30% [end];
   grid-template-rows: [row1-black] 100% [row2-end];
   font-family: 'Source Sans Pro', sans-serif;
   justify-items: start;
@@ -244,17 +238,19 @@ html, body {
     grid-area: 1 / 2 / 2 / 3;
     font-style: italic;
     letter-spacing: 1px;
-    font-size: 200%;
+    font-size: 175%;
     z-index: 4; }
   .project-item.project-next {
-    grid-area: 1 / 4 / 2 / 5;
+    grid-area: 1 / 3 / 2 / 4;
     font-style: italic;
     font-weight: 400;
     letter-spacing: 1px;
     text-align: right;
     line-height: 28px;
     transition: all 0.2s ease;
-    cursor: pointer; }
+    cursor: pointer;
+    justify-self: end;
+    margin-right: 10px; }
 
 .next-project {
   font-style: italic;
@@ -298,11 +294,9 @@ html, body {
   grid-row: 1 / span 1; }
 
 .icon {
-  float: left;
   text-decoration: none;
   cursor: pointer;
-  margin-left: 10px;
-  margin-top: -1rem; }
+  margin-left: 10px; }
 
 .oxygen {
   font-family: 'Oxygen', sans-serif; }
@@ -312,8 +306,5 @@ html, body {
 
 .ptsans {
   font-family: 'PT Sans', sans-serif; }
-
-.xl {
-  font-size: 300%; }
 
 /*# sourceMappingURL=style.css.map */
