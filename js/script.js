@@ -7,13 +7,16 @@ var doubleWinH = (winH * 2) - 1; // Get the height of the second window
 $win.on("scroll", function () {
 		if ($(this).scrollTop() >= winH && $(this).scrollTop() <= doubleWinH) {
 			navbar.css("color", "#DB1111");
+			$(".hamburger").css("color", "#DB1111");
 			navbar.css("background-color", "black");
 		}	else if ($(this).scrollTop() > doubleWinH) {
 			navbar.css("color", "black");
+			$(".hamburger").css("color", "black");
 			navbar.css("background-color", "transparent");
 		} 
 		else {
 			navbar.css("color", "white");
+			$(".hamburger").css("color", "white");
 			navbar.css("background-color", "transparent");
 		}
 }).on("resize", function(){ // if the window is resized
