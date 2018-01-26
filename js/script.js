@@ -20,6 +20,25 @@ $win.on("scroll", function () {
 		winH = $(this).height(); // The new height value
 });
 
+// hamburger menu
+$( document ).ready(function() {
+	$( ".menu" ).hide();
+	$( ".cross" ).hide();
+	$( ".hamburger" ).click(function() {
+		$( ".menu" ).slideToggle( "fast", function() {
+			$( ".hamburger" ).hide();
+			$( ".cross" ).show();
+		});
+	});
+
+	$( ".cross" ).click(function() {
+		$( ".menu" ).slideToggle( "fast", function() {
+			$( ".cross" ).hide();
+			$( ".hamburger" ).show();
+		});
+	});
+});
+
 // Zelda Projects JS
 var index = 0;
 var okToNext = true;
@@ -43,8 +62,6 @@ var projectContentArray = [
 var last = projectContentArray.length;
 
 nextProject.on('click', function() {
-	// var randomInt = getRandom(0, projectContentArray.length - 1, index);
-	// index = randomInt;
 	index += 1;
 	if (index === last) {
 		index = 0;
@@ -82,10 +99,10 @@ $('a[href*="#"]')
           scrollTop: target.offset().top
         }, 1000, function() {
           // Callback after animation
-          // Must change focus!
+          // Change focus
           var $target = $(target);
           $target.focus();
-          if ($target.is(":focus")) { // Checking if the target was focused
+          if ($target.is(":focus")) { // Check if the target was focused
             return false;
           } else {
             $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable

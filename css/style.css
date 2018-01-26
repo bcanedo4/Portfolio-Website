@@ -64,59 +64,122 @@ img {
   font-size: 17px; }
   #navbar a.navbar-home {
     float: left;
-    margin-left: 7rem; }
+    margin-left: 2rem; }
   #navbar a.navbar-about {
     float: left; }
   #navbar a.navbar-projects {
     float: left; }
   #navbar a.navbar-logo {
-    float: right;
-    margin-right: 7rem; }
+    float: right; }
 
 nav div {
   display: none; }
 
+.menu {
+  font-weight: bold;
+  font-size: 150%;
+  width: 35%;
+  height: 100vh;
+  background: #f1f1f1;
+  position: fixed;
+  text-align: center;
+  font-size: 12px;
+  border: 3px;
+  border-color: #DB1111;
+  z-index: 7; }
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-image: none; }
+
+.menu li {
+  display: block;
+  padding: 15px 0 15px 0;
+  border-bottom: #dddddd 1px solid; }
+
+.menu li:hover {
+  display: block;
+  background: #ffffff;
+  padding: 15px 0 15px 0;
+  border-bottom: #dddddd 1px solid; }
+
+.menu ul li a {
+  text-decoration: none;
+  margin: 0px;
+  color: #666; }
+
+.menu ul li a:hover {
+  color: #666;
+  text-decoration: none; }
+
+.menu a {
+  text-decoration: none;
+  color: #666; }
+
+.menu a:hover {
+  text-decoration: none;
+  color: #666; }
+
+.hamburger {
+  background: none;
+  position: absolute;
+  top: 0;
+  line-height: 20px;
+  padding: 5px 15px 0px 15px;
+  color: #999;
+  border: 0;
+  font-size: 1.4em;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  z-index: 7; }
+
+.cross {
+  background: none;
+  position: absolute;
+  top: 0px;
+  left: 3px;
+  color: #999;
+  border: 0;
+  font-size: 3em;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  z-index: 7; }
+
 @media (max-width: 1100px) {
-  nav ul {
-    display: none; }
-
-  nav div {
-    display: inline-block; }
-
   p {
     font-size: 80%; }
 
   .fa-3x {
     font-size: 2.5em; } }
 @media (max-width: 920px) {
-  nav ul {
-    display: none; }
-
-  nav div {
-    display: inline-block; }
-
   p {
     font-size: 60%; }
 
   .fa-3x {
     font-size: 2em; } }
 @media (max-width: 710px) {
-  nav ul {
-    display: none; }
-
-  nav div {
-    display: inline-block; }
-
   p {
     font-size: 40%; }
 
   .fa-3x {
     font-size: 1.5em; } }
 @media (max-width: 520px) {
+  nav ul {
+    display: none; }
+
+  nav div {
+    display: inline-block; }
+
   .fa-3x {
     font-size: 1.25em; } }
 .fa-bars {
-  margin: 25px; }
+  margin: 25px;
+  cursor: pointer;
+  z-index: 6; }
 
 .container-image {
   height: 100vh;
@@ -125,7 +188,7 @@ nav div {
 #container-tagline {
   display: grid;
   height: 100%;
-  grid-template-columns: [first-tag] 15% [line2-tag] 70% [line3-endtag] 7.5% [line4-logo] 7.5% [end];
+  grid-template-columns: [first-tag] 10% [line2-tag] 80% [line3-endtag] 10% [end];
   grid-template-rows: [row1-start] 15% [row2-logo] 30% [row3-name] 30% [row4-text] 25% [row4-end];
   background-image: url("https://images.unsplash.com/photo-1492086517200-9393d4eb53bf?auto=format&fit=crop&w=1502&q=80");
   background-repeat: no-repeat;
@@ -167,6 +230,7 @@ nav div {
   width: 100%;
   grid-template-columns: [first] 20% [line2-about] 60% [line3-resume] 20% [end];
   grid-template-rows: [row1-start] 25% [row2-about] 10% [row3-about] 65% [row4-end];
+  grid-gap: 20px;
   justify-items: start;
   align-items: start;
   background-color: paleturquoise; }
