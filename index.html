@@ -19,6 +19,7 @@
             <a href="#container-tagline"><li>Home</li></a>
             <a href="#container-about"><li>About</li></a>
             <a href="#container-projects-top"><li>Projects</li></a>
+            <a href="#container-contact"><li>Contact</li></a>
             <button class="cross">&#735;</button>
         </ul>
     </div>
@@ -28,6 +29,7 @@
                 <li><a href="#container-tagline" class="navbar-home">Home</a></li>
                 <li><a href="#container-about" class="navbar-about">About</a></li>
                 <li><a href="#container-projects-top" class="navbar-projects">Projects</a></li>
+                <li><a href="#container-contact" class="navbar-contact">Contact</a></li>
             </ul>
             <div>
                 <button class="hamburger">&#8801;</button>
@@ -67,9 +69,23 @@
             </div>
             <div class="project-item project-next"><p>Next Project</p></div>
         </div>
-        <div id="container-contact">
-            
-        </div>
+        <form method="post" action="index.php">
+            <div id="container-contact">
+                <div class="contact-item contact-title">Contact</div>
+                <div class="contact-item contact-name">
+                    <input name="name" placeholder="Name">                    
+                </div>
+                <div class="contact-item contact-email">
+                    <input name="email" placeholder="Email">                    
+                </div>
+                <div class="contact-item contact-message">
+                    <input name="message" placeholder="Message">                    
+                </div>
+                <div class="contact-item contact-submit">
+                    <input id="submit" name="submit" type="submit" value="Submit">                   
+                </div>
+            </div>
+        </form>
         <!-- Possible "In The Works" section -->
         <div class="footer raleway">
             <div class="footer-jsfiddle">

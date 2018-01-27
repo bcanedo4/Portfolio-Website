@@ -105,8 +105,8 @@ img {
         float: left;
     }
 
-    &.navbar-logo {
-        float: right;
+    &.navbar-contact {
+        float: left;
     }
 }
 
@@ -413,6 +413,51 @@ html, body {
 
 .next-project:active {
     color: #555;
+}
+
+// contact container
+#container-contact {
+    background-color: $red;
+    display: grid;
+    height: 100vh;
+    max-width: 100%;
+    grid-template-columns: [first] 100% [end];
+    grid-template-rows: [row1-start] 15% [row2-name] 15% [row2-email] 15% [row3-message]
+                        35% [row4-submit] 20% [end];
+    justify-items: center;
+    align-items: center;
+    grid-gap: 5px;    
+}
+
+.contact-item {
+    color: blue;
+    font-weight: $font-bold;
+    display: flex;
+    background-size: cover;
+    background-position: top left;
+    transition: all ease-in-out 300ms;
+    position: relative;
+    z-index: 2;
+
+    &.contact-title {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    &.contact-name {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    
+    &.contact-email {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+
+    &.contact-message {
+        grid-area: 4 / 1 / 5 / 2;
+    }
+
+    &.contact-submit {
+        grid-area: 5 / 1 / 6 / 2;
+    }
 }
 
 // footer
