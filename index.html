@@ -19,7 +19,6 @@
             <a href="#container-tagline"><li>Home</li></a>
             <a href="#container-about"><li>About</li></a>
             <a href="#container-projects-top"><li>Projects</li></a>
-            <a href="#container-contact"><li>Contact</li></a>
             <button class="cross">&#735;</button>
         </ul>
     </div>
@@ -29,7 +28,7 @@
                 <li><a href="#container-tagline" class="navbar-home">Home</a></li>
                 <li><a href="#container-about" class="navbar-about">About</a></li>
                 <li><a href="#container-projects-top" class="navbar-projects">Projects</a></li>
-                <li><a href="#container-contact" class="navbar-contact">Contact</a></li>
+                <li><button id="myBtn"><span>Contact</span></button></li>
             </ul>
             <div>
                 <button class="hamburger">&#8801;</button>
@@ -69,16 +68,21 @@
             </div>
             <div class="project-item project-next"><p>Next Project</p></div>
         </div>
+
+        <!-- page form 
         <form method="post" action="index.php">
-            <div id="container-contact">
+            <div id="container-contact" class="raleway">
                 <div class="contact-item contact-title">Contact</div>
                 <div class="contact-item contact-name">
-                    <input name="name" placeholder="Name">                    
+                    <label>Name</label>
+                    <input class="clear-left" name="name" placeholder="Name">                    
                 </div>
                 <div class="contact-item contact-email">
-                    <input name="email" placeholder="Email">                    
+                    <label>Email</label>                    
+                    <input name="email" type="email" placeholder="Email">                    
                 </div>
                 <div class="contact-item contact-message">
+                    <label>Message</label>                    
                     <input name="message" placeholder="Message">                    
                 </div>
                 <div class="contact-item contact-submit">
@@ -86,6 +90,7 @@
                 </div>
             </div>
         </form>
+    -->
         <!-- Possible "In The Works" section -->
         <div class="footer raleway">
             <div class="footer-jsfiddle">
@@ -111,6 +116,23 @@
                 <a href="https://www.linkedin.com/in/brian-canedo/" target="_blank">
                     <i class="fab fa-linkedin icon fa-3x"></i>
                 </a>
+            </div>
+        </div>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Modal Header</h2>
+            </div>
+            <div class="modal-body">
+            <p>Some text in the Modal Body</p>
+            <p>Some other text...</p>
+            </div>
+            <div class="modal-footer">
+            <h3>Modal Footer</h3>
             </div>
         </div>
     </div>
