@@ -94,6 +94,9 @@ img {
 nav div {
   display: none; }
 
+.nav-small {
+  width: 100%; }
+
 .menu {
   font-weight: bold;
   font-size: 150%;
@@ -228,7 +231,6 @@ nav div {
   .tagline-item.tagline-name {
     grid-area: 2 / 2 / 3 / 3;
     font-size: 400%;
-    z-index: 3;
     margin: 0;
     align-self: end;
     justify-self: center; }
@@ -353,7 +355,7 @@ html, body {
 #container-contact {
   background-color: #7F0000;
   display: grid;
-  height: 80vh;
+  max-height: 80vh;
   width: 100%;
   grid-template-columns: [first] 100% [end];
   grid-template-rows: [row1-start] 15% [row2-name] 15% [row2-email] 15% [row3-message] 35% [row4-submit] 20% [end];
@@ -382,12 +384,31 @@ html, body {
   .contact-item.contact-submit {
     grid-area: 5 / 1 / 6 / 2; }
 
-#myBtn {
+#contact-btn {
   color: white;
   padding-top: 14px;
   margin-right: 2em; }
 
-#myBtn > span {
+#contact-btn > span {
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 6px; }
+
+#contact-btn-small {
+  color: white;
+  padding-top: 14px;
+  margin-right: 2em; }
+
+#contact-btn-small > span {
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 6px;
+  z-index: 5; }
+
+.message-box {
+  height: 200%; }
+
+.submitBtn {
   border: 1px solid gray;
   border-radius: 4px;
   padding: 6px; }
@@ -463,6 +484,12 @@ html, body {
 .modal-body {
   background-color: #7F0000;
   padding: 2px 16px; }
+
+.modal-footer {
+  background-color: #7F0000;
+  padding: 2px 16px;
+  font-weight: 200;
+  color: white; }
 
 /* Centre the page */
 label {

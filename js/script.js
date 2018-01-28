@@ -3,24 +3,26 @@ var navbar = $("#navbar");
 var $win = $(window);
 var winH = $win.height(); // Get the window height.
 var doubleWinH = (winH * 2) - 1; // Get the height of the second window
-var contactBtn = $("#myBtn"); 
 
 $win.on("scroll", function () {
 		if ($(this).scrollTop() >= winH && $(this).scrollTop() <= doubleWinH) {
 			navbar.css("color", "#DB1111");
 			$(".hamburger").css("color", "#DB1111");
-			$("#myBtn").css("color", "#DB1111");
+			$("#contact-btn span").css("color", "#DB1111");
+			$("#contact-btn-small span").css("color", "#DB1111");
 			navbar.css("background-color", "black");
 		}	else if ($(this).scrollTop() > doubleWinH) {
 			navbar.css("color", "black");
 			$(".hamburger").css("color", "black");
-			$("#myBtn").css("color", "black");			
+			$("#contact-btn span").css("color", "black");
+			$("#contact-btn-small span").css("color", "black");						
 			navbar.css("background-color", "transparent");
 		} 
 		else {
 			navbar.css("color", "white");
 			$(".hamburger").css("color", "white");
-			$("#myBtn").css("color", "white");			
+			$("#contact-btn span").css("color", "white");
+			$("#contact-btn-small span").css("color", "white");						
 			navbar.css("background-color", "transparent");
 		}
 }).on("resize", function(){ // if the window is resized
@@ -126,7 +128,8 @@ $( document ).ready(function() {
 	var modal = document.getElementById('myModal');
 
 		// Get the button that opens the modal
-	var btn = document.getElementById("myBtn");
+	var btn = document.getElementById("contact-btn");
+	var btnSmall = document.getElementById("contact-btn-small");
 
 	// Get the <span> element that closes the modal
 	var span = document.getElementsByClassName("close")[0];
@@ -135,6 +138,11 @@ $( document ).ready(function() {
 	btn.onclick = function() {
 			modal.style.display = "block";
 			// console.log("kd");
+	}
+
+	btnSmall.onclick = function() {
+		modal.style.display = "block";
+		// console.log("kd");
 	}
 
 	// When the user clicks on <span> (x), close the modal

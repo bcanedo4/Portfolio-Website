@@ -28,10 +28,11 @@
                 <li><a href="#container-tagline" class="navbar-home">Home</a></li>
                 <li><a href="#container-about" class="navbar-about">About</a></li>
                 <li><a href="#container-projects-top" class="navbar-projects">Projects</a></li>
-                <li><button id="myBtn" class="pull-right"><span>Contact</span></button></li>
+                <li><button id="contact-btn" class="pull-right"><span>Contact</span></button></li>
             </ul>
-            <div>
+            <div class="nav-small">
                 <button class="hamburger">&#8801;</button>
+                <button id="contact-btn-small" class="pull-right"><span>Contact</span></button>
             </div>
         </nav>
     </div>
@@ -130,24 +131,29 @@
             <div class="modal-body">
                 <form method="post" action="index.php">
                     <div id="container-contact" class="raleway">
-                        <div class="contact-item contact-title">Contact</div>
+                        <!-- <div class="contact-item contact-title">Contact</div> -->
                         <div class="contact-item contact-name">
                             <label>Name</label>
-                            <input type="text" class="clear-left" name="name" placeholder="Name">                    
+                            <input type="text" class="clear-left" name="name">                    
                         </div>
                         <div class="contact-item contact-email">
                             <label>Email</label>                    
-                            <input type="text" name="email" type="email" placeholder="Email">                    
+                            <input type="text" name="email" type="email">                    
                         </div>
                         <div class="contact-item contact-message">
                             <label>Message</label>                    
-                            <input type="text" name="message" placeholder="Message">                    
+                            <input type="text" class="message-box"name="message">                    
                         </div>
                         <div class="contact-item contact-submit">
-                            <input id="submit" name="submit" type="submit" value="Submit">                   
+                            <input id="submit" class="submitBtn"name="submit" type="submit" value="Submit">                   
                         </div>
                     </div>
                 </form>
+            </div>
+            <div class="modal-footer raleway">
+                <p>Brian Canedo</p>
+                <p>Email: bcanedo4@gmail.com</p>
+                <p>Phone: (818)256-9804</p>
             </div>
             
         </div>
