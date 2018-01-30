@@ -126,6 +126,9 @@ $('a[href*="#"]')
 $( document ).ready(function() {
 	// Get the modal
 	var modal = document.getElementById('myModal');
+	$()
+	$(".message-box").focus();
+	$(".message-box").get(0).setSelectionRange(0,0);
 
 		// Get the button that opens the modal
 	var btn = document.getElementById("contact-btn");
