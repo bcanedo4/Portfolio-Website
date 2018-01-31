@@ -278,8 +278,7 @@ nav div {
 html, body {
   height: 100%;
   background: #000;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 20px; }
+  font-family: 'Source Sans Pro', sans-serif; }
 
 #container-projects-top {
   display: grid;
@@ -527,6 +526,10 @@ textarea {
   margin-top: 3px;
   font-size: 0.9em;
   color: #3a3a3a;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
   resize: none; }
 
 input, select {
@@ -537,17 +540,6 @@ input, select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box; }
-
-textarea#submit {
-  width: 600px;
-  height: 120px;
-  border: 3px solid #cccccc;
-  padding: 5px;
-  font-family: Tahoma, sans-serif;
-  background-image: url(bg.gif);
-  background-position: bottom right;
-  background-repeat: no-repeat;
-  overflow: auto; }
 
 .footer {
   display: grid;
