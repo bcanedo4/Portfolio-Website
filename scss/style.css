@@ -94,6 +94,8 @@ img {
     float: left; }
   #navbar a.navbar-contact {
     float: left; }
+  #navbar a.navbar-resume {
+    float: left; }
 
 nav div {
   display: none; }
@@ -155,7 +157,7 @@ nav div {
   top: 10px;
   line-height: 20px;
   padding: 5px 15px 0px 15px;
-  color: white;
+  color: #1D1E2C;
   border: 0;
   font-size: 1.4em;
   font-weight: bold;
@@ -274,7 +276,7 @@ nav div {
 
 #container-about {
   display: grid;
-  height: 100vh;
+  height: 50vh;
   width: 100%;
   grid-template-columns: [first] 20% [line2-about] 45% [line3-resume] 35% [end];
   grid-template-rows: [row1-start] 15% [row2-about] 10% [row3-about] 75% [row4-end];
@@ -565,7 +567,7 @@ input, select {
 
 .footer {
   display: grid;
-  height: 25vh;
+  height: 15vh;
   width: 100%;
   grid-template-columns: [first-space] 12% [line2-fiddle] 18% [line3-github] 18% [line4-fb] 18% [line5-linkedin] 18% [end];
   grid-template-rows: [row1-start] 100% [row2-end];
