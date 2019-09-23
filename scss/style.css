@@ -372,11 +372,6 @@ nav div {
   .about-item.about-text {
     font-size: 1.3rem; }
 
-html, body {
-  height: 100%;
-  background: #000;
-  font-family: 'Source Sans Pro', sans-serif; }
-
 #container-experience {
   display: block;
   height: auto;
@@ -389,6 +384,43 @@ html, body {
 .experience-title {
   font-size: 2.4rem;
   margin-bottom: 3rem; }
+
+#container-timeline {
+  display: block;
+  height: auto;
+  width: 100%; }
+
+.timeline-content {
+  background-color: #EFFFF6;
+  padding: 4rem; }
+.timeline-title {
+  font-size: 2.4rem;
+  margin-bottom: 3rem; }
+.timeline__card {
+  flex-basis: 70%;
+  height: 20rem;
+  box-shadow: 0 1.5rem 4rem rgba(29, 30, 44, 0.15);
+  padding: 2rem;
+  border-radius: 5px; }
+  .timeline__card--mc {
+    background-color: #437BBF; }
+  .timeline__card__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1D1E2C; }
+  .timeline__card__date {
+    font-size: .8rem; }
+  .timeline__card__text {
+    font-size: 1.2rem;
+    margin-top: 1rem; }
+  .timeline__card__container--left {
+    display: flex;
+    width: 100%; }
+  .timeline__card__container--right {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin: 2rem 0; }
 
 #container-projects-top {
   display: grid;

@@ -42,19 +42,16 @@ button::-moz-focus-inner {
     padding: 0;
     border: 0;
 }
-  
-button span {
-    // display: block;
-    // text-decoration: none;
-}
 
 // colors
 $black: #1D1E2C;
 $blue: #074FEA;
+$blue-mc: #437BBF;
 $red: #DB1111;
 $grey: #7C7C7C;
 $light-grey: #AFAFAF;
 $feature-box: #CCCCCC;
+$card: #E2E2E2;
 $off-white: #EFFFF6;
 
 $main-font-color: $light-grey;
@@ -84,8 +81,6 @@ $font-bold: 700;
 .content {
     flex: 1 1 100%;
     min-height: 100vh;
-    // padding-left: 5%;
-    // padding-right: 5%;
     background-color: black;
     z-index: 2;
 }
@@ -183,7 +178,7 @@ $gutter-horizontal: 6rem;
 
 }
 
-// card
+// experience cards
 .feature-box {
   background-color: rgba($feature-box, .8);
   font-size: 1.5rem;
@@ -201,7 +196,6 @@ $gutter-horizontal: 6rem;
       font-size: 6rem;
       margin-bottom: .5rem;
       display: inline-block;
-      // background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
       -webkit-background-clip: text;
       color: transparent;
 
@@ -275,7 +269,6 @@ img {
     margin-left: 16px;
     padding-right: 16px;
     text-decoration: none;
-    // font-size: 17px;
 
     &.navbar-home {
         float: left;
@@ -510,14 +503,6 @@ nav div {
     }
 }
 
-
-// Zelda Tips CSS
-html, body {
-    height: 100%;
-    background: #000;
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
 // experience
 #container-experience {
     display: block;
@@ -526,9 +511,6 @@ html, body {
     background-color: $off-white;
 
     & > .experience-content {
-      // display: block;
-      // height: 100%;
-      // width: 100%;
       background-color: $off-white;
       padding: 4rem;
     }
@@ -537,6 +519,66 @@ html, body {
 .experience-title {
   font-size: 2.4rem;
   margin-bottom: 3rem;
+}
+
+// timeline
+#container-timeline {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.timeline {
+  &-content {
+    background-color: $off-white;
+    padding: 4rem;
+  }
+
+  &-title {
+    font-size: 2.4rem;
+    margin-bottom: 3rem;
+  }
+
+  &__card {
+    flex-basis: 70%;
+    height: 20rem;
+    box-shadow: 0 1.5rem 4rem rgba(29, 30, 44, 0.15);
+    padding: 2rem;
+    border-radius: 5px;
+
+    &--mc {
+      background-color: $blue-mc;
+    }
+
+    &__title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: $black;
+    }
+
+    &__date {
+      font-size: .8rem;
+    }
+
+    &__text {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    &__container {
+      &--left {
+        display: flex;
+        width: 100%;
+      }
+
+      &--right {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        margin: 2rem 0;
+      }
+    }
+  }
 }
 
 // projects
