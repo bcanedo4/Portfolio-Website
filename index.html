@@ -18,7 +18,7 @@
             <li></li> <!-- Space for cross -->
             <a href="#container-tagline"><li>Home</li></a>
             <a href="#container-about"><li>About</li></a>
-            <a href="#container-projects-top"><li>Experience</li></a>
+            <a href="#container-experience"><li>Experience</li></a>
             <a href="./static/Brian Canedo Resume.pdf" target="_blank" download><li>Resume</li></a>
             <button class="cross">&#735;</button>
         </ul>
@@ -50,17 +50,43 @@
         </div>
         
         <div id="container-about" class="oxygen">
-            <div class="about-item about-title"><p>A bit about me.</p></div>
-            <div class="about-item about-text">
-                <p>
-                    I am a Computer Science graduate from California State Universtiy Of Northridge.
-                    After working as a front-end developer for a number of years, web development has 
-                    become my favorite means of programming. 
-                </p>
-            </div>
-            <div class="about-item about-resume underline"><p>Resume</p></div>
+          <div class="about-content">
+              <div class="about-item about-title"><p>A bit about me.</p></div>
+              <div class="about-item about-text">
+                  <p>
+                      I am a Computer Science graduate from California State Universtiy Of Northridge.
+                      After working as a front-end developer for a number of years, web development has 
+                      become my favorite means of programming. 
+                  </p>
+              </div>
+          </div>
+            
         </div>
-        <div id="container-projects-top">
+        <div id="container-experience" class="oxygen">
+          <div class="experience-title"><p>My Experience</p></div>
+          <div class="row">
+            <div class="col-1-of-3">
+              <div class="feature-box">
+                  <i class="fa fa-code feature-box__icon__code fa-2x" aria-hidden="true"></i>
+                  <p class="feature-box__heading u-margin-bottom-small">Front-end Development</p>
+                  <p class="feature-box__text">
+                      I've built user-facing features using HTML, CSS, JavaScript, and GraphQL.
+                  </p>
+              </div>
+            </div>
+            <div class="col-1-of-3">
+                <div class="card">
+                  
+                </div>
+              </div>
+              <div class="col-1-of-3">
+                  <div class="card">
+                    
+                  </div>
+                </div>
+          </div>
+        </div>
+        <!-- <div id="container-projects-top">
             <div class="project-item project-title"><p>React YouTube Player</p></div>
         </div>
         <div id="container-projects-bottom">
@@ -71,7 +97,7 @@
                 </p>
             </div>
             <div class="project-item project-next"><p>Next Project</p></div>
-        </div>
+        </div> -->
         <!-- Possible "In The Works" section -->
         <div class="footer raleway">
             <div class="footer-jsfiddle">
@@ -100,57 +126,6 @@
             </div>
         </div>
     </div>
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2>Contact Me!</h2>
-            </div>
-            <div class="modal-body">
-                <form method="post" action="index.php">
-                    <div id="container-contact" class="raleway">
-                        <!-- <div class="contact-item contact-title">Contact</div> -->
-                        <div class="contact-item contact-name">
-                            <label>Name</label>
-                        </div>
-                        <div class="contact-item contact-name-box">
-                            <input type="text" class="clear-left" name="name">                    
-                        </div>
-                        <div class="contact-item contact-email">
-                            <label>Email</label>                                        
-                        </div>
-                        <div class="contact-item contact-email-box">
-                            <input name="email" type="email">
-                        </div>                        
-                        <div class="contact-item contact-message">
-                            <label>Message</label>    
-                        </div>
-                        <div class="contact-item contact-message-box">                
-                            <textarea type="text" class="message-box" name="message"></textarea>                    
-                        </div>
-                        <div class="contact-item contact-antispam">
-                            <label>*What is 2+2? (Anti-spam)</label>
-                        </div>
-                        <div class="contact-item contact-antispam-box">
-                            <input name="human">
-                        </div>
-                        <div class="contact-item contact-submit">
-                            <input id="submit" class="submitBtn" name="submit" type="submit" value="Submit">                   
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer raleway">
-                <p>Brian Canedo</p>
-                <p>Email: bcanedo4@gmail.com</p>
-                <p>Phone: (818)256-9804</p>
-            </div>
-            
-        </div>
-    </div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="js/script.js"></script>
 </body>
