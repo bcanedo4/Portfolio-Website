@@ -187,7 +187,7 @@ $gutter-horizontal: 6rem;
 .feature-box {
   background-color: rgba($feature-box, .8);
   font-size: 1.5rem;
-  padding: 2.5rem;
+  padding: 1.5rem;
   text-align: center;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba($black, .15);
@@ -212,10 +212,18 @@ $gutter-horizontal: 6rem;
       &__code {
         color: #1A7F15;
       }
+
+      &__cubes {
+        color: magenta;
+      }
+
+      &__ui {
+        color: #FF7526;
+      }
   }
 
   &__heading {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 700;
     text-transform: uppercase;
   }
@@ -513,10 +521,17 @@ html, body {
 // experience
 #container-experience {
     display: block;
-    height: 50vh;
+    height: auto;
     width: 100%;
     background-color: $off-white;
-    padding: 4rem;
+
+    & > .experience-content {
+      // display: block;
+      // height: 100%;
+      // width: 100%;
+      background-color: $off-white;
+      padding: 4rem;
+    }
 }
 
 .experience-title {
