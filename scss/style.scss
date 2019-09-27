@@ -47,6 +47,7 @@ button::-moz-focus-inner {
 $black: #1D1E2C;
 $blue: #074FEA;
 $blue-mc: #437BBF;
+$red-ml: #D00C20;
 $red: #DB1111;
 $grey: #7C7C7C;
 $light-grey: #AFAFAF;
@@ -243,7 +244,8 @@ img {
     width: 100%;
     height: 50px;
     overflow: hidden;
-    background-color: transparent;
+    background-color: white;
+    opacity: .8;
     z-index: 3;
     position: fixed;
     top: 0;
@@ -550,6 +552,10 @@ nav div {
       background-color: $blue-mc;
     }
 
+    &--ml {
+      background-color: $red-ml;
+    }
+
     &__title {
       font-size: 1.8rem;
       font-weight: 700;
@@ -557,12 +563,16 @@ nav div {
     }
 
     &__date {
-      font-size: .8rem;
+      font-size: 1.1rem;
     }
 
     &__text {
       font-size: 1.2rem;
       margin-top: 1rem;
+
+      & > li {
+        margin-bottom: .5rem;
+      }
     }
 
     &__container {

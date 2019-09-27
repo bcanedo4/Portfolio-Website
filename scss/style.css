@@ -137,7 +137,8 @@ img {
   width: 100%;
   height: 50px;
   overflow: hidden;
-  background-color: transparent;
+  background-color: white;
+  opacity: .8;
   z-index: 3;
   position: fixed;
   top: 0;
@@ -404,15 +405,19 @@ nav div {
   border-radius: 5px; }
   .timeline__card--mc {
     background-color: #437BBF; }
+  .timeline__card--ml {
+    background-color: #D00C20; }
   .timeline__card__title {
     font-size: 1.8rem;
     font-weight: 700;
     color: #1D1E2C; }
   .timeline__card__date {
-    font-size: .8rem; }
+    font-size: 1.1rem; }
   .timeline__card__text {
     font-size: 1.2rem;
     margin-top: 1rem; }
+    .timeline__card__text > li {
+      margin-bottom: .5rem; }
   .timeline__card__container--left {
     display: flex;
     width: 100%; }
