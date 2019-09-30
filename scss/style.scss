@@ -47,18 +47,112 @@ button::-moz-focus-inner {
 $black: #1D1E2C;
 $blue: #074FEA;
 $blue-mc: #437BBF;
+$blue-materialize: #2196f3;
+$blue-light-materialize: #6ec6ff;
+$blue-dark-materialize: #0069c0;
+$red-materialize: #ef5350;
+$red-light-materialize: #ff867c;
+$red-dark-materialize: #b61827;
 $red-ml: #D00C20;
 $red: #DB1111;
+$off-white: #EFFFF6;
 $grey: #7C7C7C;
 $light-grey: #AFAFAF;
 $feature-box: #CCCCCC;
 $card: #E2E2E2;
-$off-white: #EFFFF6;
+
+$background-0: #89D0FF;
+$background-1: #6EC6FF;
+$background-2: #4CAEFF;
+$background-3: #2196F3;
+$background-4: #1F87DD;
 
 $main-font-color: $light-grey;
 $active-color: $light-grey;
 
 $font-bold: 700;
+
+// animations
+@keyframes fadeInNormal {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  // up
+  35% {
+    opacity: .5;
+  }
+
+  // down
+  70% {
+    opacity: .25;
+  }
+
+  85% {
+    opacity: 0;
+  }
+
+
+  // up
+  100% {
+    opacity: 1;
+  }
+
+}
+
+@keyframes moveInLeft {
+  0% {
+      opacity: 0;
+      transform: translateX(-10rem);
+  }
+
+  80% {
+      transform: translateX(1rem);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+      opacity: 0;
+      transform: translateX(10rem);
+  }
+
+  80% {
+      transform: translateX(-1rem);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+      opacity: 0;
+      transform: translateY(3rem);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
+}
 
 
 // styling
@@ -422,13 +516,18 @@ nav div {
 
 // image covering
 .container-image {
-    height: 85vh;
+    height: 100vh;
     // width: 100%;
+    // background-image: linear-gradient(
+    //     to right,
+    //     rgba(#ffffff, 0.5),
+    //     rgba(#ffffff, 0.5)),
+    //     url("https://www.dropbox.com/s/9eoju6oq2732hta/fullsizeoutput_2f5.jpeg?raw=1");
     background-image: linear-gradient(
-        to right,
-        rgba(#ffffff, 0.5),
-        rgba(#ffffff, 0.5)),
-        url("https://www.dropbox.com/s/9eoju6oq2732hta/fullsizeoutput_2f5.jpeg?raw=1");
+      to bottom,
+      rgba($background-0, 1),
+      rgba($background-1, 1)
+    );
     background-size: cover;
     background-position: top;
 }
@@ -447,30 +546,36 @@ nav div {
 }
 
 .tagline-item {
-    color: $black;
-    font-weight: $font-bold;
-    display: flex;
-    // font-size: 1.5em;
-    background-size: cover;
-    background-position: top left;
-    transition: all ease-in-out 300ms;
-    position: relative;
-    z-index: 2;
+  color: $black;
+  font-weight: $font-bold;
+  display: flex;
+  background-size: cover;
+  background-position: top left;
+  transition: all ease-in-out 300ms;
+  position: relative;
+  z-index: 2;
 
     &.tagline-name {
-        grid-area: 2 / 2 / 3 / 3;
-        font-size: 3rem;
-        margin: 0;
-        align-self: end;
-        justify-self: center;
+      grid-area: 2 / 2 / 3 / 3;
+      font-size: 4rem;
+      margin: 0;
+      align-self: end;
+      justify-self: center;
+      animation-name: fadeInNormal;
+      animation-duration: 2s;
+      // animation-timing-function: ease-out;
     }
 
     &.tagline-text {
-        grid-area: 3 / 2 / 4 / 3;
-        // font-size: 200%;
-        margin: 0;
-        align-self: start;
-        justify-self: center;
+      grid-area: 3 / 2 / 4 / 3;
+      font-size: 2.2rem;
+      margin: 0;
+      align-self: start;
+      justify-self: center;
+      animation-name: moveInRight;
+      // animation-delay: 2s;
+      animation-duration: 2.2s;
+      // animation-timing-function: step-end;
     }
 }
 
@@ -479,30 +584,43 @@ nav div {
     display: grid;
     height: 50vh;
     width: 100%;
-    background-color: $off-white;
-    
+    background-color: $blue-materialize;
+    background-image: linear-gradient(
+        to bottom,
+        rgba($background-1, 1),
+        rgba($background-2, 1)
+    );
     & > .about-content {
-        padding: 4rem;
+      padding: 4rem;
     }
 }
 
 .about-item {
-    color: $black;
-    display: flex;
-    background-size: cover;
-    background-position: top left;
-    transition: all ease-in-out 300ms;
-    position: relative;
-    z-index: 2;
+  color: $black;
+  display: flex;
+  // background-size: cover;
+  // background-position: top left;
+  // transition: all ease-in-out 300ms;
+  // position: relative;
+  z-index: 2;
 
-    &.about-title {
-        font-size: 2.4rem;
-        margin-bottom: 3rem;
-    }
+  &.about-title {
+    font-size: 2.4rem;
+    margin-bottom: 3rem;
+  }
 
-    &.about-text {
-        font-size: 1.3rem;
-    }
+  &.about-text {
+    font-size: 1.3rem;
+    flex-basis: 50%;
+  }
+
+  &.about-photo {
+    flex-basis: 50%;
+  }
+}
+
+.about-text-item__container {
+  display: flex;
 }
 
 // experience
@@ -510,10 +628,14 @@ nav div {
     display: block;
     height: auto;
     width: 100%;
-    background-color: $off-white;
+    background-image: linear-gradient(
+        to bottom,
+        rgba($background-2, 1),
+        rgba($background-3, 1)
+    );
 
     & > .experience-content {
-      background-color: $off-white;
+      // background-color: $blue-materialize;
       padding: 4rem;
     }
 }
@@ -532,7 +654,12 @@ nav div {
 
 .timeline {
   &-content {
-    background-color: $off-white;
+    background-image: linear-gradient(
+        to bottom,
+        rgba($background-3, 1),
+        rgba($background-4, 1)
+    );
+    // background-color: $blue-materialize;
     padding: 4rem;
   }
 
@@ -549,11 +676,11 @@ nav div {
     border-radius: 5px;
 
     &--mc {
-      background-color: $blue-mc;
+      background-color: $card;
     }
 
     &--ml {
-      background-color: $red-ml;
+      background-color: $card;
     }
 
     &__title {
