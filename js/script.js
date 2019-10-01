@@ -88,42 +88,42 @@ $('a[href*="#"]')
 	});
 	
 // contact modal
-$( document ).ready(
-	function() {
-	// Get the modal
-	var modal = document.getElementById('myModal');
-	$()
-	$(".message-box").focus();
-	$(".message-box").get(0).setSelectionRange(0,0);
+// $( document ).ready(
+// 	function() {
+// 	// Get the modal
+// 	var modal = document.getElementById('myModal');
+// 	$()
+// 	$(".message-box").focus();
+// 	$(".message-box").get(0).setSelectionRange(0,0);
 
-		// Get the button that opens the modal
-	var btn = document.getElementById("contact-btn");
-	var btnSmall = document.getElementById("contact-btn-small");
+// 		// Get the button that opens the modal
+// 	var btn = document.getElementById("contact-btn");
+// 	var btnSmall = document.getElementById("contact-btn-small");
 
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("close")[0];
+// 	// Get the <span> element that closes the modal
+// 	var span = document.getElementsByClassName("close")[0];
 
-	// When the user clicks the button, open the modal 
-	btn.onclick = function() {
-		modal.style.display = "block";
-	}
+// 	// When the user clicks the button, open the modal 
+// 	btn.onclick = function() {
+// 		modal.style.display = "block";
+// 	}
 
-	btnSmall.onclick = function() {
-		modal.style.display = "block";
-	}
+// 	btnSmall.onclick = function() {
+// 		modal.style.display = "block";
+// 	}
 
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() {
-		modal.style.display = "none";
-	}
+// 	// When the user clicks on <span> (x), close the modal
+// 	span.onclick = function() {
+// 		modal.style.display = "none";
+// 	}
 
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-		if (event.target == modal) {
-				modal.style.display = "none";
-		}
-	}
-});
+// 	// When the user clicks anywhere outside of the modal, close it
+// 	window.onclick = function(event) {
+// 		if (event.target == modal) {
+// 				modal.style.display = "none";
+// 		}
+// 	}
+// });
 
 // play animations on view
 $(document).ready(
@@ -132,7 +132,6 @@ $(document).ready(
 		var windowHeight;
 	
 		function init() {
-			console.log('checking');
 			elements = document.querySelectorAll('.hidden');
 			windowHeight = window.innerHeight;
 		}
@@ -142,8 +141,28 @@ $(document).ready(
 				var element = elements[i];
 				var positionFromTop = elements[i].getBoundingClientRect().top;
 	
-				if (positionFromTop - windowHeight <= 0) {
-					element.classList.add('fade-in-element');
+				// -125 instead of 0 to appear in middle
+				if (positionFromTop - windowHeight <= -100) {
+					if (element.classList.contains('about-text')) {
+						element.classList.add('move-in-left');
+					}
+
+					else if (element.classList.contains('about-photo')) {
+						element.classList.add('fade-in-element');
+					}
+
+					else if (element.classList.contains('feature-box')) {
+						element.classList.add('move-in-bottom');
+					}
+
+					else if (element.classList.contains('timeline__card--mc')) {
+						element.classList.add('move-in-right');
+					}
+
+					else if (element.classList.contains('timeline__card--ml')) {
+						element.classList.add('move-in-left');
+					}
+					// element.classList.add('fade-in-element');
 					element.classList.remove('hidden');
 				}
 			}

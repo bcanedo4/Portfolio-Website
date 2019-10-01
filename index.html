@@ -31,6 +31,7 @@
                 <li><a href="#container-tagline" class="navbar-home">Home</a></li>
                 <li><a href="#container-about" class="navbar-about">About</a></li>
                 <li><a href="#container-experience" class="navbar-projects">Experience</a></li>
+                <li><a href="#container-timeline" class="navbar-projects">Timeline</a></li>
                 <li><a href="./static/Brian Canedo Resume.pdf" class="navbar-resume" target="_blank" download>Resume</a></li>
                 <li><a href="mailto: bcanedo4@gmail.com" class="navbar-email pull-right">bcanedo4@gmail.com</a></li>
                 <li><a class="pull-right">(818) 256-9804</a></li>
@@ -44,125 +45,105 @@
 
     <!-- Content -->
     <div class="content">
-        <div class="container-image">
-            <div id="container-tagline" class="raleway">
-                <h1 class="tagline-item tagline-name hidden"><p>Hi, my name is Brian Canedo.</p></h1>
-                <div class="tagline-item tagline-text hidden">
-                    <p>Front-end &amp; UI Developer with a can-do attitude!</p>
-                </div>
-            </div>
+      <div class="container-image">
+        <div id="container-tagline" class="raleway">
+          <h1 class="tagline-item tagline-name hidden"><p>Hi, my name is Brian Canedo.</p></h1>
+          <div class="tagline-item tagline-text hidden">
+            <p>Front-end &amp; UI Developer with a can-do attitude!</p>
+          </div>
         </div>
+      </div>
         
-        <!-- About -->
-        <div id="container-about" class="oxygen">
-          <div class="about-content">
-            <div class="about-item about-title"><p>A bit about me.</p></div>
-            <div class="about-text-photo__container">
-              <div class="about-item about-text hidden">
-                  <p>
-                    I am a Computer Science graduate from California State Universtiy Of Northridge.
-                    After working as a front-end developer for a number of years, web development has 
-                    become my favorite means of programming. When I am not programming, I enjoy rock climbing
-                    and going to music festivals. 
-                  </p>
-              </div>
-              <div class="about-item about-photo hidden">
-                <div class="about-photo__holder"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Experience -->
-        <div id="container-experience" class="oxygen">
-          <div class="experience-content ptsans">
-            <div class="experience-title"><p>My Experience</p></div>
-            <div class="row">
-
-              <div class="col-1-of-3">
-                <div class="feature-box">
-                  <i class="fa fa-code feature-box__icon__code fa-2x" aria-hidden="true"></i>
-                  <p class="feature-box__heading u-margin-bottom-small">Front-end Development</p>
-                  <p class="feature-box__text">
-                    Created and styled new and exisiting application components 
-                    using HTML, CSS, JavaScript, React, and GraphQL.
-                  </p>
-                </div>
-              </div>
-              <div class="col-1-of-3">
-                <div class="feature-box">
-                  <i class="fa fa-cubes feature-box__icon__cubes fa-2x" aria-hidden="true"></i>
-                  <p class="feature-box__heading u-margin-bottom-small">Algorithms and Data Structures</p>
-                  <p class="feature-box__text">
-                    Studied algorithms and data structures at length 
-                    whilst at University and at the workplace. 
-                  </p>
-                </div>
-              </div>
-              <div class="col-1-of-3">
-                <div class="feature-box">
-                  <i class="fa fa-desktop feature-box__icon__ui fa-2x" aria-hidden="true"></i>
-                  <p class="feature-box__heading u-margin-bottom-small">UI/UX Design</p>
-                  <p class="feature-box__text">
-                    I've created prototypes and designs using Sketch and Invision.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Timeline -->
-        <div id="container-timeline" class="oxygen">
-          <div class="timeline-content">
-            <div class="timeline-title"><p>My Timeline</p></div>
-
-            <div class="timeline__card__container ptsans">
-              <div class="timeline__card">
-                <p class="timeline__card__title">Front-end Developer at Mastery Coding</p>
-                <p class="timeline__card__date">Century City, CA - July 2018 - September 2019</p>
-                <ul class="timeline__card__text">
-                  <li>- Employed the Styled Components package to create modular and scalable component systems in React</li>
-                  <li>- Worked closely with the lead UX Designer to deliver wireframes to all members of the engineering department with Sketch and Zeplin.</li>
-                  <li>- Ensured that React components operated upon GraphQL mutations and queries when making requests to the backend</li>
-                </ul>
-              </div>
-            </div>
-            <div class="timeline__card__container">
-              <div class="timeline__card">
-                  <p class="timeline__card__title">Front-end Developer at META+Lab</p>
-                  <p class="timeline__card__date">Northridge, CA - August 2017 - December 2017</p>
-                  <ul class="timeline__card__text">
-                    <li>- Designed and created websites and mobile applications using HTML, CSS, JavaScript.</li>
-                    <li>- Prepared in depth prototypes for mobile applications using Adobe XD.</li>
-                  </ul>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <!-- <div id="container-projects-top">
-            <div class="project-item project-title"><p>React YouTube Player</p></div>
-        </div>
-        <div id="container-projects-bottom">
-            <div class="project-item project-content">
+      <!-- About -->
+      <div id="container-about" class="oxygen">
+        <div class="about-content">
+          <div class="about-item about-title"><p>A bit about me.</p></div>
+          <div class="about-text-photo__container hidden">
+            <div class="about-item about-text hidden">
                 <p>
-                    Using React, I created a more centralized way to view YouTube videos, 
-                    as it displays the video you are currently watching, and five other suggestions. 
+                  I am a Computer Science graduate from California State Universtiy of Northridge.
+                  After working as a front-end developer for a number of years, web development has 
+                  become my favorite means of programming. When I am not programming, I enjoy rock climbing
+                  and going to music festivals. My favorite musical I have yet to see is Hamilton and my favorite
+                  video game is Super Smash Brothers.
                 </p>
             </div>
-            <div class="project-item project-next"><p>Next Project</p></div>
-        </div> -->
-        <!-- Possible "In The Works" section -->
+            <div class="about-item about-photo hidden">
+              <div class="about-photo__holder"></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <!-- Experience -->
+      <div id="container-experience" class="oxygen">
+        <div class="experience-content ptsans">
+          <div class="experience-title"><p>My Experience</p></div>
+          <div class="row">
+
+            <div class="col-1-of-3">
+              <div class="feature-box feature-box-1 hidden">
+                <i class="fa fa-code feature-box__icon__code fa-2x" aria-hidden="true"></i>
+                <p class="feature-box__heading u-margin-bottom-small">Front-end Development</p>
+                <p class="feature-box__text">
+                  Implemented and styled new and exisiting application components 
+                  using HTML, CSS, JavaScript, React, and GraphQL.
+                </p>
+              </div>
+            </div>
+            <div class="col-1-of-3">
+              <div class="feature-box feature-box-2 hidden">
+                <i class="fa fa-cubes feature-box__icon__cubes fa-2x" aria-hidden="true"></i>
+                <p class="feature-box__heading u-margin-bottom-small">Algorithms and Data Structures</p>
+                <p class="feature-box__text">
+                  Studied algorithms and data structures at length 
+                  whilst at University and at the workplace. 
+                </p>
+              </div>
+            </div>
+            <div class="col-1-of-3">
+              <div class="feature-box feature-box-3 hidden">
+                <i class="fa fa-desktop feature-box__icon__ui fa-2x" aria-hidden="true"></i>
+                <p class="feature-box__heading u-margin-bottom-small">UI/UX Design</p>
+                <p class="feature-box__text">
+                  Created prototypes and designs using Sketch and Invision.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div id="container-timeline" class="oxygen">
+        <div class="timeline-content">
+          <div class="timeline-title"><p>My Timeline</p></div>
+
+          <div class="timeline__card__container ptsans">
+            <div class="timeline__card timeline__card--mc hidden">
+              <p class="timeline__card__title">Front-end Developer at Mastery Coding</p>
+              <p class="timeline__card__date">Century City, CA - July 2018 - September 2019</p>
+              <ul class="timeline__card__text">
+                <li>- Employed the Styled Components package to create modular and scalable component systems in React</li>
+                <li>- Worked closely with the lead UX Designer to deliver wireframes to all members of the engineering department with Sketch and Zeplin.</li>
+                <li>- Ensured that React components operated upon GraphQL mutations and queries when making requests to the backend</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline__card__container">
+            <div class="timeline__card timeline__card--ml hidden">
+                <p class="timeline__card__title">Front-end Developer at META+Lab</p>
+                <p class="timeline__card__date">Northridge, CA - August 2017 - December 2017</p>
+                <ul class="timeline__card__text">
+                  <li>- Designed and created websites and mobile applications using HTML, CSS, JavaScript.</li>
+                  <li>- Prepared in depth prototypes for mobile applications using Adobe XD.</li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
         <!-- Footer -->
         <div class="footer raleway">
-            <div class="footer__item footer-jsfiddle">
-                <div class="pull-left"><p>My JSFiddle:</p></div>
-                <a href="https://jsfiddle.net/user/bcanedo4/fiddles/" target="_blank">
-                    <i class="fab fa-jsfiddle icon fa-3x"></i>
-                </a>
-            </div>
             <div class="footer__item footer-github">
                 <div class="pull-left"><p>My Github:</p></div>
                 <a href="https://github.com/bcanedo4" target="_blank">

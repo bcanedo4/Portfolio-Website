@@ -73,6 +73,25 @@ $active-color: $light-grey;
 $font-bold: 700;
 
 // animations
+@keyframes leftToRight {
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 50%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes fade-in {
+  from {opacity: 0; transform: scale(.8,.8)}
+  to {opacity: 1;}
+}
+
 @keyframes fadeInNormal {
   0% {
     opacity: 0;
@@ -83,31 +102,20 @@ $font-bold: 700;
   }
 }
 
-@keyframes fadeIn {
-  0% {
+@keyframes moveFromBottom {
+    0% {
     opacity: 0;
+    transform: translateY(-10rem);
   }
 
-  // up
-  35% {
-    opacity: .5;
+  80% {
+    transform: translateY(1rem);
   }
 
-  // down
-  70% {
-    opacity: .25;
-  }
-
-  85% {
-    opacity: 0;
-  }
-
-
-  // up
   100% {
     opacity: 1;
+    transform: translate(0);
   }
-
 }
 
 @keyframes moveInLeft {
@@ -154,6 +162,29 @@ $font-bold: 700;
   }
 }
 
+.fade-in-element {
+  animation: fade-in 1.4s;
+}
+
+.fade-in-normal {
+  animation: fadeInNormal 1.4s;
+}
+
+.move-from-bottom {
+  animation: moveFromBottom 1.4s;
+}
+
+.move-in-left {
+  animation: moveInLeft 1.4s;
+}
+
+.move-in-right {
+  animation: moveInRight 1.4s;
+}
+
+.move-in-bottom {
+  animation: moveInBottom 1.4s;
+}
 
 // styling
 .pull-left {
@@ -178,14 +209,6 @@ $font-bold: 700;
     min-height: 100vh;
     background-color: black;
     z-index: 2;
-}
-
-@keyframes fade-in {
-  from {opacity: 0; transform: scale(.8,.8)}
-  to {opacity: 1;}
-}
-.fade-in-element {
-animation: fade-in 1.4s;
 }
 
 // utils
@@ -535,22 +558,14 @@ nav div {
     z-index: 6;
 }
 
-// image covering
+// covering
 .container-image {
     height: 100vh;
-    // width: 100%;
-    // background-image: linear-gradient(
-    //     to right,
-    //     rgba(#ffffff, 0.5),
-    //     rgba(#ffffff, 0.5)),
-    //     url("https://www.dropbox.com/s/9eoju6oq2732hta/fullsizeoutput_2f5.jpeg?raw=1");
     background-image: linear-gradient(
       to bottom,
       rgba($background-0, 1),
       rgba($background-1, 1)
     );
-    background-size: cover;
-    background-position: top;
 }
 
 // tagline and logo
@@ -603,7 +618,7 @@ nav div {
 // about
 #container-about {
     display: grid;
-    height: 100vh;
+    height: 90vh;
     width: 100%;
     // background-color: $blue-materialize;
     background-image: linear-gradient(
@@ -628,8 +643,9 @@ nav div {
     font-size: 1.3rem;
     flex-basis: 50%;
     width: 100%;
-    animation: moveInLeft;
-    animation-duration: 2s;
+    line-height: 1.7;
+    // animation: moveInLeft;
+    // animation-duration: 2s;
   }
 
   &.about-photo {
@@ -640,12 +656,13 @@ nav div {
 }
 
 .about-photo__holder {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 70%;
+  float: right;
   background-image: url(../static/Me.jpeg);
   background-size: cover;
   background-position: top;
-  float: right;
+  border-radius: 1.5rem;
 }
 
 .about-text-photo__container {
@@ -656,19 +673,18 @@ nav div {
 
 // experience
 #container-experience {
-    display: block;
-    height: auto;
-    width: 100%;
-    background-image: linear-gradient(
-        to bottom,
-        rgba($background-2, 1),
-        rgba($background-3, 1)
-    );
+  display: block;
+  height: auto;
+  width: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba($background-2, 1),
+    rgba($background-3, 1)
+  );
 
-    & > .experience-content {
-      // background-color: $blue-materialize;
-      padding: 4rem;
-    }
+  & > .experience-content {
+    padding: 4rem;
+  }
 }
 
 .experience-title {
@@ -706,16 +722,6 @@ nav div {
     padding: 2rem;
     border-radius: 5px;
 
-    
-
-    &--mc {
-      background-color: $card;
-    }
-
-    &--ml {
-      background-color: $card;
-    }
-
     &__title {
       font-size: 1.8rem;
       font-weight: 700;
@@ -724,6 +730,7 @@ nav div {
 
     &__date {
       font-size: 1.1rem;
+      opacity: .6;
     }
 
     &__text {
@@ -1059,6 +1066,7 @@ input, select {
     height: 8rem;
     width: 100%;
     grid-template-columns: [first-space] 12% [line2-fiddle] 18% [line3-github] 18% [line4-fb] 18% [line5-linkedin] 18% [end];
+    grid-template-columns: [first-space] 16% [line2-github] 25% [line3-fb] 25% [line4-linkedin] 18% [end]; 
     grid-template-rows: [row1-start] 100% [row2-end];
     // padding-top: 8vh;
     background-color: $card;
@@ -1080,17 +1088,17 @@ input, select {
 }
 
 .footer-github {
-    grid-column: 3 / span 1;
+    grid-column: 2 / span 1;
     grid-row: 1 / span 1;
 }
 
 .footer-facebook {
-    grid-column: 4 / span 1;
+    grid-column: 3 / span 1;
     grid-row: 1 / span 1;
 }
 
 .footer-linkedin {
-    grid-column: 5 / span 1;
+    grid-column: 4 / span 1;
     grid-row: 1 / span 1;
 }
 
