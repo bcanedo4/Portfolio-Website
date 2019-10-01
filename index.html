@@ -12,17 +12,19 @@
     <script defer src="./static/fontawesome/fontawesome-all.js"></script>
 </head>
 <body> 
-    <!-- Hidden menu -->
+    <!-- Mobile Navbar -->
     <div class="menu raleway">
         <ul>
             <li></li> <!-- Space for cross -->
             <a href="#container-tagline"><li>Home</li></a>
             <a href="#container-about"><li>About</li></a>
             <a href="#container-experience"><li>Experience</li></a>
-            <a href="./static/Brian Canedo Resume.pdf" target="_blank" download><li>Resume</li></a>
+            <a class="navbar__resume__button" href="./static/Brian Canedo Resume.pdf" target="_blank" download><li>Resume</li></a>
             <button class="cross">&#735;</button>
         </ul>
     </div>
+
+    <!-- Desktop Navbar -->
     <div id="navbar" class="raleway">
         <nav>
             <ul>
@@ -30,7 +32,7 @@
                 <li><a href="#container-about" class="navbar-about">About</a></li>
                 <li><a href="#container-experience" class="navbar-projects">Experience</a></li>
                 <li><a href="./static/Brian Canedo Resume.pdf" class="navbar-resume" target="_blank" download>Resume</a></li>
-                <li><a href="mailto: bcanedo4@gmail.com" class="pull-right">bcanedo4@gmail.com</a></li>
+                <li><a href="mailto: bcanedo4@gmail.com" class="navbar-email pull-right">bcanedo4@gmail.com</a></li>
                 <li><a class="pull-right">(818) 256-9804</a></li>
             </ul>
             <div class="nav-small">
@@ -39,34 +41,39 @@
             </div>
         </nav>
     </div>
+
+    <!-- Content -->
     <div class="content">
         <div class="container-image">
             <div id="container-tagline" class="raleway">
-                <h1 class="tagline-item tagline-name"><p>Hi, my name is Brian Canedo.</p></h1>
-                <div class="tagline-item tagline-text">
+                <h1 class="tagline-item tagline-name hidden"><p>Hi, my name is Brian Canedo.</p></h1>
+                <div class="tagline-item tagline-text hidden">
                     <p>Front-end &amp; UI Developer with a can-do attitude!</p>
                 </div>
             </div>
         </div>
         
+        <!-- About -->
         <div id="container-about" class="oxygen">
           <div class="about-content">
-              <div class="about-item about-title"><p>A bit about me.</p></div>
-              <div class="about-text-photo__container">
-                  <div class="about-item about-text">
-                      <p>
-                        I am a Computer Science graduate from California State Universtiy Of Northridge.
-                        After working as a front-end developer for a number of years, web development has 
-                        become my favorite means of programming. When I am not programming, I enjoy rock climbing
-                        and going to music festivals. 
-                      </p>
-                  </div>
-                  <div class="about-item about-photo">
-                  </div>
+            <div class="about-item about-title"><p>A bit about me.</p></div>
+            <div class="about-text-photo__container">
+              <div class="about-item about-text hidden">
+                  <p>
+                    I am a Computer Science graduate from California State Universtiy Of Northridge.
+                    After working as a front-end developer for a number of years, web development has 
+                    become my favorite means of programming. When I am not programming, I enjoy rock climbing
+                    and going to music festivals. 
+                  </p>
               </div>
+              <div class="about-item about-photo hidden">
+                <div class="about-photo__holder"></div>
+              </div>
+            </div>
           </div>
-            
         </div>
+
+        <!-- Experience -->
         <div id="container-experience" class="oxygen">
           <div class="experience-content ptsans">
             <div class="experience-title"><p>My Experience</p></div>
@@ -104,12 +111,14 @@
             </div>
           </div>
         </div>
+
+        <!-- Timeline -->
         <div id="container-timeline" class="oxygen">
           <div class="timeline-content">
             <div class="timeline-title"><p>My Timeline</p></div>
 
-            <div class="timeline__card__container--left ptsans">
-              <div class="timeline__card timeline__card--mc">
+            <div class="timeline__card__container ptsans">
+              <div class="timeline__card">
                 <p class="timeline__card__title">Front-end Developer at Mastery Coding</p>
                 <p class="timeline__card__date">Century City, CA - July 2018 - September 2019</p>
                 <ul class="timeline__card__text">
@@ -119,8 +128,8 @@
                 </ul>
               </div>
             </div>
-            <div class="timeline__card__container--right">
-              <div class="timeline__card timeline__card--ml">
+            <div class="timeline__card__container">
+              <div class="timeline__card">
                   <p class="timeline__card__title">Front-end Developer at META+Lab</p>
                   <p class="timeline__card__date">Northridge, CA - August 2017 - December 2017</p>
                   <ul class="timeline__card__text">
@@ -145,26 +154,28 @@
             <div class="project-item project-next"><p>Next Project</p></div>
         </div> -->
         <!-- Possible "In The Works" section -->
+
+        <!-- Footer -->
         <div class="footer raleway">
-            <div class="footer-jsfiddle">
+            <div class="footer__item footer-jsfiddle">
                 <div class="pull-left"><p>My JSFiddle:</p></div>
                 <a href="https://jsfiddle.net/user/bcanedo4/fiddles/" target="_blank">
                     <i class="fab fa-jsfiddle icon fa-3x"></i>
                 </a>
             </div>
-            <div class="footer-github">
+            <div class="footer__item footer-github">
                 <div class="pull-left"><p>My Github:</p></div>
                 <a href="https://github.com/bcanedo4" target="_blank">
                     <i class="fab fa-github icon fa-3x"></i>
                 </a>
             </div>
-            <div class="footer-facebook">
+            <div class="footer__item footer-facebook">
                 <div class="pull-left"><p>My Facebook:</p></div>
                 <a href="https://www.facebook.com/brian.canedo.1" target="_blank">
                     <i class="fab fa-facebook-square icon fa-3x"></i>
                 </a>
             </div>
-            <div class="footer-linkedin">
+            <div class="footer__item footer-linkedin">
                 <div class="pull-left"><p>My LinkedIn:</p></div>
                 <a href="https://www.linkedin.com/in/brian-canedo/" target="_blank">
                     <i class="fab fa-linkedin icon fa-3x"></i>

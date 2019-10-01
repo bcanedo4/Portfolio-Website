@@ -180,6 +180,19 @@ $font-bold: 700;
     z-index: 2;
 }
 
+@keyframes fade-in {
+  from {opacity: 0; transform: scale(.8,.8)}
+  to {opacity: 1;}
+}
+.fade-in-element {
+animation: fade-in 1.4s;
+}
+
+// utils
+.hidden {
+  opacity: 0;
+}
+
 // mixins
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
@@ -275,7 +288,8 @@ $gutter-horizontal: 6rem;
 
 // experience cards
 .feature-box {
-  background-color: rgba($feature-box, .8);
+  // background-color: rgba($feature-box, .8);
+  background-color: $card;
   font-size: 1.5rem;
   padding: 1.5rem;
   text-align: center;
@@ -360,15 +374,15 @@ img {
 #navbar a {
     display: block;
     text-align: left;
-    padding-top: 14px;
-    padding-bottom: 14px;      
-    margin-left: 16px;
-    padding-right: 16px;
+    // padding-top: 14px;
+    // padding-bottom: 14px;      
+    // margin-left: 16px;
+    // padding-right: 16px;
+    padding: 1rem;
     text-decoration: none;
 
     &.navbar-home {
         float: left;
-        margin-left: 2rem;
     }
 
     &.navbar-about {
@@ -384,7 +398,14 @@ img {
     }
 
     &.navbar-resume {
-        float: left;
+      float: left;
+      outline: 1px solid $black;
+      outline-offset: -10px;
+    }
+
+    &.navbar-email {
+      outline: 1px solid $black;
+      outline-offset: -10px;
     }
 }
 
@@ -582,9 +603,9 @@ nav div {
 // about
 #container-about {
     display: grid;
-    height: 50vh;
+    height: 100vh;
     width: 100%;
-    background-color: $blue-materialize;
+    // background-color: $blue-materialize;
     background-image: linear-gradient(
         to bottom,
         rgba($background-1, 1),
@@ -597,12 +618,6 @@ nav div {
 
 .about-item {
   color: $black;
-  display: flex;
-  // background-size: cover;
-  // background-position: top left;
-  // transition: all ease-in-out 300ms;
-  // position: relative;
-  z-index: 2;
 
   &.about-title {
     font-size: 2.4rem;
@@ -612,15 +627,31 @@ nav div {
   &.about-text {
     font-size: 1.3rem;
     flex-basis: 50%;
+    width: 100%;
+    animation: moveInLeft;
+    animation-duration: 2s;
   }
 
   &.about-photo {
     flex-basis: 50%;
+    width: 100%;
+    // height: 100%;
   }
 }
 
-.about-text-item__container {
+.about-photo__holder {
+  width: 100%;
+  height: 100%;
+  background-image: url(../static/Me.jpeg);
+  background-size: cover;
+  background-position: top;
+  float: right;
+}
+
+.about-text-photo__container {
   display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 // experience
@@ -659,7 +690,6 @@ nav div {
         rgba($background-3, 1),
         rgba($background-4, 1)
     );
-    // background-color: $blue-materialize;
     padding: 4rem;
   }
 
@@ -669,11 +699,14 @@ nav div {
   }
 
   &__card {
-    flex-basis: 70%;
+    width: 100%;
+    background-color: $card;
     height: 20rem;
     box-shadow: 0 1.5rem 4rem rgba(29, 30, 44, 0.15);
     padding: 2rem;
     border-radius: 5px;
+
+    
 
     &--mc {
       background-color: $card;
@@ -703,17 +736,12 @@ nav div {
     }
 
     &__container {
-      &--left {
-        display: flex;
-        width: 100%;
-      }
+      display: flex;
+      width: 100%;
 
-      &--right {
-        display: flex;
-        width: 100%;
-        justify-content: flex-end;
-        margin: 2rem 0;
-      }
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+    }
     }
   }
 }
@@ -1027,13 +1055,23 @@ input, select {
 // footer
 .footer {
     display: grid;
-    height: 15vh;
+    // height: 15vh;
+    height: 8rem;
     width: 100%;
     grid-template-columns: [first-space] 12% [line2-fiddle] 18% [line3-github] 18% [line4-fb] 18% [line5-linkedin] 18% [end];
     grid-template-rows: [row1-start] 100% [row2-end];
-    padding-top: 8vh;
-    background-color: $light-grey;
+    // padding-top: 8vh;
+    background-color: $card;
     font-size: 18px;
+
+    &__item {
+      padding-top: 2.7rem;
+      &:hover {
+        transform: scale(1.03);
+      }
+      transition: all 0.2s ease;
+
+    }
 }
 
 .footer-jsfiddle {

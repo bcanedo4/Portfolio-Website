@@ -4,6 +4,8 @@ var $win = $(window);
 var winH = $win.height(); // Get the window height.
 var doubleWinH = ((winH * 2) - 1) * .85; // Get the height of the second window
 
+
+
 // $win.on("scroll", function () {
 // 		if ($(this).scrollTop() >= winH && $(this).scrollTop() <= doubleWinH) {
 // 			navbar.css("color", "#DB1111");
@@ -48,42 +50,6 @@ $( document ).ready(function() {
 	});
 });
 
-// Zelda Projects JS
-var index = 0;
-var okToNext = true;
-var nextProject = $('.project-next');
-var projectTitle = $('.project-title p');
-var projectContent = $('.project-content p');
-var projectContentArray = [
-	{
-		title: 'React YouTube Player',
-		content: 'Using React, I created a more centralized way to view YouTube videos, as it displays the video you are currently watching, and five other suggestions.'
-	},
-	{
-		title: 'Vue Monster Game',
-		content: 'Using Vue, I created a turned based game where you must give it your all to defeat the monster'
-	},
-	{
-		title: 'Weather App',
-		content: 'I incorporated a weather API to be able to display the weather in either Pacoima (my hometown) or Northridge.'
-	}
-]
-var last = projectContentArray.length;
-
-nextProject.on('click', function() {
-	index += 1;
-	if (index === last) {
-		index = 0;
-	}
-	projectTitle.animate({'opacity': 0}, 1000, function () {
-		projectTitle.html(projectContentArray[index].title);
-	}).animate({'opacity': 1}, 750);
-	
-	projectContent.animate({'opacity': 0}, 1000, function () {
-		projectContent.html(projectContentArray[index].content);
-	}).animate({'opacity': 1}, 750);
-});
-
 // Smooth scrolling
 $('a[href*="#"]')
   // Remove links that don't actually link to anything
@@ -122,7 +88,8 @@ $('a[href*="#"]')
 	});
 	
 // contact modal
-$( document ).ready(function() {
+$( document ).ready(
+	function() {
 	// Get the modal
 	var modal = document.getElementById('myModal');
 	$()
@@ -157,3 +124,35 @@ $( document ).ready(function() {
 		}
 	}
 });
+
+// play animations on view
+$(document).ready(
+	(function() {
+		var elements;
+		var windowHeight;
+	
+		function init() {
+			console.log('checking');
+			elements = document.querySelectorAll('.hidden');
+			windowHeight = window.innerHeight;
+		}
+	
+		function checkPosition() {
+			for (var i = 0; i < elements.length; i++) {
+				var element = elements[i];
+				var positionFromTop = elements[i].getBoundingClientRect().top;
+	
+				if (positionFromTop - windowHeight <= 0) {
+					element.classList.add('fade-in-element');
+					element.classList.remove('hidden');
+				}
+			}
+		}
+	
+		window.addEventListener('scroll', checkPosition);
+		window.addEventListener('resize', init);
+	
+		init();
+		checkPosition();
+	})()
+)
