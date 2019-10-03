@@ -521,8 +521,10 @@ nav div {
     font-size: 1.8rem;
     font-weight: 700;
     color: #1D1E2C; }
+    @media only screen and (max-width: 37.5em) {
+      .timeline__card__title {
+        font-size: 65%; } }
   .timeline__card__date {
-    font-size: 1.1rem;
     opacity: .6; }
   .timeline__card__text {
     font-size: 1.2rem;

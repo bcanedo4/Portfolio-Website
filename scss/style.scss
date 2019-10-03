@@ -748,10 +748,13 @@ nav div {
       font-size: 1.8rem;
       font-weight: 700;
       color: $black;
+
+      @include respond(phone) {
+        font-size: 65%; 
+      }
     }
 
     &__date {
-      font-size: 1.1rem;
       opacity: .6;
     }
 
