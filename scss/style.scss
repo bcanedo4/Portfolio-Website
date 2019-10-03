@@ -205,10 +205,17 @@ $font-bold: 700;
 
 // content
 .content {
-    flex: 1 1 100%;
-    min-height: 100vh;
-    background-color: black;
-    z-index: 2;
+  flex: 1 1 100%;
+  min-height: 100vh;
+  z-index: 2;
+  background-image: linear-gradient(
+    to bottom,
+    rgba($background-0, 1),
+    rgba($background-1, 1),
+    rgba($background-2, 1),
+    rgba($background-3, 1),
+    rgba($background-4, 1),
+  );
 }
 
 // utils
@@ -247,65 +254,64 @@ $gutter-vertical-small: 6rem;
 $gutter-horizontal: 6rem;
 
 .row {
-    max-width: $grid-width;
-    margin: 0 auto;
+  max-width: $grid-width;
+  margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+
+    @include respond(tab-port) {
+      margin-bottom: $gutter-vertical-small;
+    }
+  }
+  
+  @include respond(tab-port) {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+
+  @include clearfix;
+
+  [class^="col-"] {
+    float: left;
 
     &:not(:last-child) {
-        margin-bottom: $gutter-vertical;
+      margin-right: $gutter-horizontal;
 
-        @include respond(tab-port) {
-            margin-bottom: $gutter-vertical-small;
-        }
+      @include respond(tab-port) {
+          margin-right: 0;
+          margin-bottom: $gutter-vertical-small;
+      }
     }
-    
+
     @include respond(tab-port) {
-        max-width: 50rem;
-        padding: 0 3rem;
+      width: 100% !important;
     }
+  }
 
-    @include clearfix;
+  .col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2);  
+  }
 
-    [class^="col-"] {
-        float: left;
+  .col-1-of-3 {
+    width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+  }
 
-        &:not(:last-child) {
-            margin-right: $gutter-horizontal;
+  .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
+  }
 
-            @include respond(tab-port) {
-                margin-right: 0;
-                margin-bottom: $gutter-vertical-small;
-            }
-        }
+  .col-1-of-4 {
+    width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+  }
 
-        @include respond(tab-port) {
-            width: 100% !important;
-        }
-    }
+  .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal});
+  }
 
-    .col-1-of-2 {
-        width: calc((100% - #{$gutter-horizontal}) / 2);
-        
-    }
-
-    .col-1-of-3 {
-        width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
-    }
-
-    .col-2-of-3 {
-        width: calc(2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
-    }
-
-    .col-1-of-4 {
-        width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
-    }
-
-    .col-2-of-4 {
-        width: calc(2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal});
-    }
-
-    .col-3-of-4 {
-        width: calc(3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal});
-    }
+  .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal});
+  }
 
 }
 
@@ -325,27 +331,27 @@ $gutter-horizontal: 6rem;
   }
 
   &__icon {
-      font-size: 6rem;
-      margin-bottom: .5rem;
-      display: inline-block;
-      -webkit-background-clip: text;
-      color: transparent;
+    font-size: 6rem;
+    margin-bottom: .5rem;
+    display: inline-block;
+    -webkit-background-clip: text;
+    color: transparent;
 
-      @include respond(tab-port) {
-          margin-bottom: 0;
-      }
+    @include respond(tab-port) {
+      margin-bottom: 0;
+    }
 
-      &__code {
-        color: #1A7F15;
-      }
+    &__code {
+      color: #1A7F15;
+    }
 
-      &__cubes {
-        color: magenta;
-      }
+    &__cubes {
+      color: magenta;
+    }
 
-      &__ui {
-        color: #FF7526;
-      }
+    &__ui {
+      color: #FF7526;
+    }
   }
 
   &__heading {
@@ -366,70 +372,70 @@ $gutter-horizontal: 6rem;
 
 // image sizing
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 // navigation bar
 #navbar {
-    width: 100%;
-    height: 50px;
-    overflow: hidden;
-    background-color: white;
-    opacity: .8;
-    z-index: 3;
-    position: fixed;
-    top: 0;
-    color: $black;
-    transition: color 200ms linear;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  background-color: white;
+  opacity: .8;
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  color: $black;
+  transition: color 200ms linear;
 }
 
 #navbar:after {
-    background-color: $black;
-    content: '';
-    display: block;
-    position: absolute;
-    padding-left: 5%;
-    padding-right: 5%;
-    z-index: 2;
+  background-color: $black;
+  content: '';
+  display: block;
+  position: absolute;
+  padding-left: 5%;
+  padding-right: 5%;
+  z-index: 2;
 }
 
 #navbar a {
-    display: block;
-    text-align: left;
-    // padding-top: 14px;
-    // padding-bottom: 14px;      
-    // margin-left: 16px;
-    // padding-right: 16px;
-    padding: 1rem;
-    text-decoration: none;
+  display: block;
+  text-align: left;
+  // padding-top: 14px;
+  // padding-bottom: 14px;      
+  // margin-left: 16px;
+  // padding-right: 16px;
+  padding: 1rem;
+  text-decoration: none;
 
-    &.navbar-home {
-        float: left;
-    }
-
-    &.navbar-about {
-        float: left;
-    }
-
-    &.navbar-projects {
-        float: left;
-    }
-
-    &.navbar-contact {
-        float: left;
-    }
-
-    &.navbar-resume {
+  &.navbar-home {
       float: left;
-      outline: 1px solid $black;
-      outline-offset: -10px;
-    }
+  }
 
-    &.navbar-email {
-      outline: 1px solid $black;
-      outline-offset: -10px;
-    }
+  &.navbar-about {
+      float: left;
+  }
+
+  &.navbar-projects {
+      float: left;
+  }
+
+  &.navbar-contact {
+      float: left;
+  }
+
+  &.navbar-resume {
+    float: left;
+    outline: 1px solid $black;
+    outline-offset: -10px;
+  }
+
+  &.navbar-email {
+    outline: 1px solid $black;
+    outline-offset: -10px;
+  }
 }
 
 .navbar__resume__button {
@@ -438,152 +444,154 @@ img {
 }
 
 nav div {
-    display: none;
+  display: none;
 }
 
 .nav-small {
-    width: 100%;
+  width: 100%;
 }
 
 // hamburger menu
 .menu {
-    font-weight: bold; 
-    font-size: 150%; 
-    width: 35%; 
-    height: 100vh;
-    background:#f1f1f1;  
-    position: fixed; 
-    text-align: center; 
-    font-size:12px;
-    border: 3px;
-    border-color: #DB1111;
-    z-index: 7; 
-    transition: color 200ms linear;
+  font-weight: bold; 
+  font-size: 150%; 
+  width: 35%; 
+  height: 100vh;
+  background:#f1f1f1;  
+  position: fixed; 
+  text-align: center; 
+  font-size:12px;
+  border: 3px;
+  border-color: #DB1111;
+  z-index: 7; 
+  transition: color 200ms linear;
 }
 
 .menu ul {
-    margin: 0; 
-    padding: 0; 
-    list-style-type: none; 
-    list-style-image: none;
+  margin: 0; 
+  padding: 0; 
+  list-style-type: none; 
+  list-style-image: none;
 }
 
 .menu li {
-    display: block;   
-    padding: 15px 0 15px 0; 
-    border-bottom:#dddddd 1px solid;
+  display: block;   
+  padding: 15px 0 15px 0; 
+  border-bottom:#dddddd 1px solid;
 }
 
 .menu li:hover {
-    display: block;    
-    background:#ffffff; 
-    padding: 15px 0 15px 0; 
-    border-bottom:#dddddd 1px solid;
+  display: block;    
+  background:#ffffff; 
+  padding: 15px 0 15px 0; 
+  border-bottom:#dddddd 1px solid;
 }
 
 .menu ul li a { 
-    text-decoration: none;  
-    margin: 0px; 
-    color:#666;
+  text-decoration: none;  
+  margin: 0px; 
+  color:#666;
 }
 
 .menu ul li a:hover {  
-    color: #666; text-decoration:none;
+  color: #666; text-decoration: none;
 }
 .menu a {
-    text-decoration:none; color:#666;
+  text-decoration:none; color:#666;
 }
 .menu a:hover {
-    text-decoration:none; color:#666;
+  text-decoration:none; color:#666;
 }
 
 .hamburger {
-    background: none;
-    position: absolute;
-    top: 10px;
-    line-height: 20px;
-    padding: 5px 15px 0px 15px;
-    color: $black;
-    border: 0;
-    font-size: 1.4em;
-    font-weight: bold;
-    cursor: pointer;
-    outline: none;
-    z-index: 7;
+  background: none;
+  position: absolute;
+  top: 10px;
+  line-height: 20px;
+  padding: 5px 15px 0px 15px;
+  color: $black;
+  border: 0;
+  font-size: 1.4em;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  z-index: 7;
 }
 
 .cross {
-    background: none;
-    position: absolute;
-    top: 0px;
-    left: 5px;
-    color:#999;
-    border: 0;
-    font-size: 3em;
-    font-weight: bold;
-    cursor: pointer;
-    outline: none;
-    z-index: 7;
+  background: none;
+  position: absolute;
+  top: 0px;
+  left: 5px;
+  color:#999;
+  border: 0;
+  font-size: 3em;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  z-index: 7;
 }
 
 @media (max-width: 1100px) {
-    p {font-size: 90%;}
-    a {font-size: 80%;}
-    button {font-size: 90%}
-    .fa-3x {font-size: 2.5em;}
+  p {font-size: 90%;}
+  a {font-size: 80%;}
+  button {font-size: 90%}
+  .fa-3x {font-size: 2.5em;}
 }
 
 @media (max-width: 920px) {
-    p {font-size: 75%;}
-    a {font-size: 65% }
-    button {font-size: 75%}    
-    .fa-3x {font-size: 2.25em;}
+  p {font-size: 75%;}
+  a {font-size: 65% }
+  button {font-size: 75%}    
+  .fa-3x {font-size: 2.25em;}
 }
 
 @media (max-width: 715px) {
-    p {font-size: 65%;}
-    a {font-size: 55% }
-    button {font-size: 65%}    
-    .fa-3x {font-size: 1.5em;}
+  p {font-size: 65%;}
+  a {font-size: 55% }
+  button {font-size: 65%}    
+  .fa-3x {font-size: 1.5em;}
 }
 
 // convert to hamburger menu for smaller screens
 @media only screen and (max-width: 520px) {
-    p {font-size: 65%;}
-    a {font-size: 55% }
-    button {font-size: 65%}  
-    nav ul     { display: none; }
-    nav div { display: inline-block; }
-    .fa-3x {font-size: 1.25em;}
+  p {font-size: 65%;}
+  a {font-size: 55% }
+  button {font-size: 65%}  
+  nav ul     { display: none; }
+  nav div { display: inline-block; }
+  .fa-3x {font-size: 1.25em;}
 }
 
 .fa-bars {
-    margin: 25px;
-    cursor: pointer;
-    z-index: 6;
+  margin: 25px;
+  cursor: pointer;
+  z-index: 6;
 }
 
 // covering
 .container-image {
-    height: 100vh;
-    background-image: linear-gradient(
-      to bottom,
-      rgba($background-0, 1),
-      rgba($background-1, 1)
-    );
+  &:focus {
+    outline: none;
+  }
+
+  height: 100vh;
+  // background-image: linear-gradient(
+  //   to bottom,
+  //   rgba($background-0, 1),
+  //   rgba($background-1, 1)
+  // );
 }
 
 // tagline and logo
 #container-tagline {
   display: grid;
   height: 100%;
-  max-width: 100%;    
   grid-template-columns: [first-tag] 10% [line2-tag] 80% [line3-endtag] 10% [end];
   grid-template-rows: [row1-start] 15% [row2-logo] 30% [row3-name] 30% [row4-text] 25% [row4-end];
   background-repeat: no-repeat;
   background-size: cover;
   max-width: 100%;
-  outline: none;
 }
 
 .tagline-item {
@@ -623,12 +631,11 @@ nav div {
   display: grid;
   height: 90vh;
   width: 100%;
-  outline: none;
-  background-image: linear-gradient(
-      to bottom,
-      rgba($background-1, 1),
-      rgba($background-2, 1)
-  );
+  // background-image: linear-gradient(
+  //     to bottom,
+  //     rgba($background-1, 1),
+  //     rgba($background-2, 1)
+  // );
   & > .about-content {
     padding: 4rem;
   }
@@ -693,15 +700,17 @@ nav div {
 
 // experience
 #container-experience {
+  &:focus {
+    outline: none;
+  }
   display: block;
   height: auto;
   width: 100%;
-  outline: none;
-  background-image: linear-gradient(
-    to bottom,
-    rgba($background-2, 1),
-    rgba($background-3, 1)
-  );
+  // background-image: linear-gradient(
+  //   to bottom,
+  //   rgba($background-2, 1),
+  //   rgba($background-3, 1)
+  // );
 
   & > .experience-content {
     padding: 4rem;
@@ -715,19 +724,21 @@ nav div {
 
 // timeline
 #container-timeline {
+  &:focus {
+    outline: none;
+  }
   display: block;
   height: auto;
   width: 100%;
-  outline: none;
 }
 
 .timeline {
   &-content {
-    background-image: linear-gradient(
-        to bottom,
-        rgba($background-3, 1),
-        rgba($background-4, 1)
-    );
+    // background-image: linear-gradient(
+    //     to bottom,
+    //     rgba($background-3, 1),
+    //     rgba($background-4, 1)
+    // );
     padding: 4rem;
   }
 
@@ -1087,7 +1098,7 @@ input, select {
     // height: 15vh;
     height: 8rem;
     width: 100%;
-    grid-template-columns: [first-space] 12% [line2-fiddle] 18% [line3-github] 18% [line4-fb] 18% [line5-linkedin] 18% [end];
+    // grid-template-columns: [first-space] 12% [line2-fiddle] 18% [line3-github] 18% [line4-fb] 18% [line5-linkedin] 18% [end];
     grid-template-columns: [first-space] 16% [line2-github] 25% [line3-fb] 25% [line4-linkedin] 18% [end]; 
     grid-template-rows: [row1-start] 100% [row2-end];
     // padding-top: 8vh;

@@ -120,8 +120,8 @@ button::-moz-focus-inner {
 .content {
   flex: 1 1 100%;
   min-height: 100vh;
-  background-color: black;
-  z-index: 2; }
+  z-index: 2;
+  background-image: linear-gradient(to bottom, #89d0ff, #6ec6ff, #4caeff, #2196f3, #1f87dd); }
 
 .hidden {
   opacity: 0; }
@@ -393,19 +393,18 @@ nav div {
   z-index: 6; }
 
 .container-image {
-  height: 100vh;
-  background-image: linear-gradient(to bottom, #89d0ff, #6ec6ff); }
+  height: 100vh; }
+  .container-image:focus {
+    outline: none; }
 
 #container-tagline {
   display: grid;
   height: 100%;
-  max-width: 100%;
   grid-template-columns: [first-tag] 10% [line2-tag] 80% [line3-endtag] 10% [end];
   grid-template-rows: [row1-start] 15% [row2-logo] 30% [row3-name] 30% [row4-text] 25% [row4-end];
   background-repeat: no-repeat;
   background-size: cover;
-  max-width: 100%;
-  outline: none; }
+  max-width: 100%; }
 
 .tagline-item {
   color: #1D1E2C;
@@ -436,9 +435,7 @@ nav div {
 #container-about {
   display: grid;
   height: 90vh;
-  width: 100%;
-  outline: none;
-  background-image: linear-gradient(to bottom, #6ec6ff, #4caeff); }
+  width: 100%; }
   #container-about > .about-content {
     padding: 4rem; }
 
@@ -488,9 +485,9 @@ nav div {
 #container-experience {
   display: block;
   height: auto;
-  width: 100%;
-  outline: none;
-  background-image: linear-gradient(to bottom, #4caeff, #2196f3); }
+  width: 100%; }
+  #container-experience:focus {
+    outline: none; }
   #container-experience > .experience-content {
     padding: 4rem; }
 
@@ -501,11 +498,11 @@ nav div {
 #container-timeline {
   display: block;
   height: auto;
-  width: 100%;
-  outline: none; }
+  width: 100%; }
+  #container-timeline:focus {
+    outline: none; }
 
 .timeline-content {
-  background-image: linear-gradient(to bottom, #2196f3, #1f87dd);
   padding: 4rem; }
 .timeline-title {
   font-size: 2.4rem;
@@ -798,7 +795,6 @@ input, select {
   display: grid;
   height: 8rem;
   width: 100%;
-  grid-template-columns: [first-space] 12% [line2-fiddle] 18% [line3-github] 18% [line4-fb] 18% [line5-linkedin] 18% [end];
   grid-template-columns: [first-space] 16% [line2-github] 25% [line3-fb] 25% [line4-linkedin] 18% [end];
   grid-template-rows: [row1-start] 100% [row2-end];
   background-color: #E2E2E2;
