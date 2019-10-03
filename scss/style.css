@@ -126,6 +126,12 @@ button::-moz-focus-inner {
 .hidden {
   opacity: 0; }
 
+@media only screen and (max-width: 56.25em) {
+  .hidden-small {
+    opacity: 0;
+    width: 0;
+    height: 0; } }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -743,21 +749,6 @@ nav div {
   text-decoration: none;
   cursor: pointer; }
 
-.modal-header {
-  padding: 2px 16px;
-  background-color: #7F0000;
-  color: white; }
-
-.modal-body {
-  background-color: #7F0000;
-  padding: 2px 16px; }
-
-.modal-footer {
-  background-color: #7F0000;
-  padding: 2px 16px;
-  font-weight: 200;
-  color: white; }
-
 /* center the page */
 label {
   margin-top: 16px;
@@ -795,13 +786,24 @@ input, select {
   display: grid;
   height: 8rem;
   width: 100%;
-  grid-template-columns: [first-space] 16% [line2-github] 25% [line3-fb] 25% [line4-linkedin] 18% [end];
+  grid-template-columns: [first-space] 16% [line2-github] 23% [line3-fb] 22% [line4-linkedin] 23% [last-space] 16% [end];
   grid-template-rows: [row1-start] 100% [row2-end];
   background-color: #E2E2E2;
   font-size: 18px; }
+  @media only screen and (max-width: 56.25em) {
+    .footer {
+      display: block;
+      height: 3rem;
+      grid-template-columns: [first-space] 15% [line2-github] 23% [line3-fb] 22% [line4-linkedin] 23% [last-space] 15% [end]; } }
   .footer__item {
     padding-top: 2.7rem;
     transition: all 0.2s ease; }
+    @media only screen and (max-width: 56.25em) {
+      .footer__item {
+        padding: 0;
+        padding-top: .8rem;
+        font-size: 20px;
+        vertical-align: middle; } }
     .footer__item:hover {
       transform: scale(1.03); }
 
@@ -812,14 +814,23 @@ input, select {
 .footer-github {
   grid-column: 2 / span 1;
   grid-row: 1 / span 1; }
+  @media only screen and (max-width: 56.25em) {
+    .footer-github {
+      display: inline-block; } }
 
 .footer-facebook {
   grid-column: 3 / span 1;
   grid-row: 1 / span 1; }
+  @media only screen and (max-width: 56.25em) {
+    .footer-facebook {
+      display: inline-block; } }
 
 .footer-linkedin {
   grid-column: 4 / span 1;
   grid-row: 1 / span 1; }
+  @media only screen and (max-width: 56.25em) {
+    .footer-linkedin {
+      display: inline-block; } }
 
 .icon {
   text-decoration: none;
