@@ -639,14 +639,14 @@ nav div {
   display: grid;
   height: 90vh;
   width: 100%;
-  // background-image: linear-gradient(
-  //     to bottom,
-  //     rgba($background-1, 1),
-  //     rgba($background-2, 1)
-  // );
   & > .about-content {
     padding: 4rem;
-  }
+
+    @include respond(phone) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }  
 }
 
 .about-item {
@@ -700,7 +700,6 @@ nav div {
   height: 100%;
 
   @include respond(tab-port) {
-    // flex-wrap: wrap;
     flex-direction: column;
     justify-content: start;
   }
@@ -714,14 +713,14 @@ nav div {
   display: block;
   height: auto;
   width: 100%;
-  // background-image: linear-gradient(
-  //   to bottom,
-  //   rgba($background-2, 1),
-  //   rgba($background-3, 1)
-  // );
 
   & > .experience-content {
     padding: 4rem;
+
+    @include respond(phone) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
   }
 }
 
@@ -742,12 +741,12 @@ nav div {
 
 .timeline {
   &-content {
-    // background-image: linear-gradient(
-    //     to bottom,
-    //     rgba($background-3, 1),
-    //     rgba($background-4, 1)
-    // );
     padding: 4rem;
+
+    @include respond(phone) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
   }
 
   &-title {
