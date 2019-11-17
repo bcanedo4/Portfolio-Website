@@ -476,7 +476,7 @@ nav div {
   float: right;
   background-image: url(../static/Me.jpeg);
   background-size: cover;
-  background-position: top;
+  background-position: center;
   border-radius: 1.5rem; }
   @media only screen and (max-width: 56.25em) {
     .about-photo__holder {
